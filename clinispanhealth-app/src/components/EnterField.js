@@ -1,4 +1,4 @@
-const signUp = () => {
+const EnterField = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const signUp = () => {
     )
 }
 
-export default signUp
+export default EnterField

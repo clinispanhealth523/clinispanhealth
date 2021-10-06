@@ -1,21 +1,20 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+import './signUp.css';
+import SignUp from './components/signUp';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-}
+
 
 class Banner extends React.Component {
   render() {
     return (
-      <h1>Hello world!</h1>
+      <div>
+        <SignUp/>
+      </div>
+
     )
   }
 }
 
-export default App;
 
 ReactDOM.render(<Banner />, document.getElementById("root"));
