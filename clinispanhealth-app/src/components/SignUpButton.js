@@ -5,7 +5,7 @@ to the sign up button beside the 'login' hyperlink at the top of the page.
 */
 
 const SignUpButton = ({className}) => {
-    const classN = className == 'long' ? 'long' : 'signUpButton'
+    const classN = className === 'long' ? 'long' : 'signUpButton'
 
     return (
         <button className={classN}><b>Sign Up</b></button>

@@ -8,7 +8,7 @@ const SignUp = () => {
             <SignUpHeader/>
             <div className="mainSignUp">
                 <div>
-                    <p className="np">Click <a href="">here</a> to sign up if you are a Non-Profit Organization.</p>
+                    <p className="np">Click <a href=".">here</a> to sign up if you are a Non-Profit Organization.</p>
                 </div>
                 <div className='forms'>
                     <b><p className='label'>Joining is free and secure. What are you waiting for?</p></b>
