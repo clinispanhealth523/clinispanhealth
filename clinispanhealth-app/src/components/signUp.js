@@ -1,11 +1,9 @@
-import SignUpHeader from "./SignUpHeader"
 import EnterField from "./EnterField"
 import SignUpButton from "./SignUpButton"
 
 const SignUp = () => {
     return (
         <div>
-            <SignUpHeader/>
             <div className="mainSignUp">
                 <div>
                     <p className="np">Click <a href=".">here</a> to sign up if you are a Non-Profit Organization.</p>

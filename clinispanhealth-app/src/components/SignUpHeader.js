@@ -4,13 +4,18 @@
 import SignUpButton from "./SignUpButton"
 import HyperLink from "./HyperLink"
 
-// ADD onClick FUNCTIONS
+// The header will act as a navigation router for react with links to different sites
+import { Link, withRouter } from "react-router-dom";
 
+// The header exists as a function
 const SignUpHeader = () => {
     return (
         <div className='signUpHeader'>
             <div className='containerH'>
-                <div className='cshHeader'></div>
+                <Link to="/home">
+                    <div className='cshHeader'>
+                    </div>
+                </Link>
             </div>
             <div className='containerH2'>
                     <HyperLink name='browse'/>
