@@ -1,0 +1,39 @@
+/* 
+Hex Codes
+CSH Blue: #059EC5
+CSH Grey: #989898 
+*/
+body {
+  background-color: #989898;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+button {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: 800;
+  display: block;
+  background-color: white;
+  border: none;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+#home {
+  color: #059EC5;
+}
+
+button:hover {
+  background-color: #989898;
+}
+
+img {
+  padding-left: 2vw;
+}
