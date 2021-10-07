@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import HomePage from './HomePage';
+import './signUp.css';
+import SignUp from './components/signUp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HomePage />
+    <SignUp />
   </React.StrictMode>,
   document.getElementById('root')
 );

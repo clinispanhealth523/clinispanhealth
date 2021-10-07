@@ -1,0 +1,54 @@
+.signUpHeader {
+display: flex;
+justify-content: space-between;
+height: 100px;
+background-color: #FFFFFF
+}
+
+.cshHeader {
+    height: 100px;
+    width: 330px;
+    background-image: url("./images/CSH\ Logo.png");
+    background-size: cover;
+}
+
+.hyperLink {
+    margin: 10px;
+}
+
+.containerH, .containerH2 {
+display: flex;
+align-items: center;
+width: 40%;
+background-color: #FFFFFF
+}
+
+.containerH2 {
+    justify-content: flex-end
+}
+
+
+.signUpButton {
+    height: 30px;
+    width: 100px;
+    background-color: #059EC5;
+    border-style: solid;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.signUpButton:hover {
+    background-color: #989898;
+}
+
+.login {
+    color: #059EC5;
+}
+
+.mainSignUp {
+    height: 900px;
+    width: 100%;
+    background-color: #989898;
+    background-image: url('./images/cs-signup.jpg');
+    background-repeat: no-repeat;
+}
