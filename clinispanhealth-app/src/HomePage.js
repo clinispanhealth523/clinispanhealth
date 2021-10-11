@@ -2,6 +2,7 @@ import './HomePage.css';
 import logo from './images/CSH Logo.png'
 import create from './images/create-acct.PNG'
 import hands from './images/hands.PNG'
+import fb from './images/fb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 
@@ -20,12 +21,16 @@ function HomePage() {
 function Banner() {
     return (
       <div className="navbar">
-        <button className="nav" id="home">Home</button>
-        <button className="nav">Studies For You</button>
-        <button className="nav">Browse Studies</button>
-        <button className="nav">Manage Profile</button>
-        <button className="nav">FAQ</button>
-        <img src={logo} alt="logo" width="300" height="100"/>
+        <div id="left-navbar">
+          <button className="nav" id="home">Home</button>
+          <button className="nav">Studies For You</button>
+          <button className="nav">Browse Studies</button>
+          <button className="nav">Manage Profile</button>
+          <button className="nav">FAQ</button>
+        </div>
+        <div id="right-navbar">
+          <img src={logo} alt="logo" width="300" height="100"/>
+        </div>  
       </div>
     );
 }
@@ -81,12 +86,14 @@ function Dashboard() {
 function Dashboard2() {
   return (
     <div className="dashboard">
-      <div className="h3">
-        <h3>New to Clinispan? Check out our website to find out more about the medical 
-          study process and to see what people are saying about us!
-        </h3>
-      </div>
-      <img src={create} alt="acct" width="600" height="320" />
+        <div className="h3">
+          <h3>New to Clinispan? Check out our website to find out more about the medical 
+            study process and to see what people are saying about us!
+          </h3>
+        </div>
+        <div id="db2-img-container">
+          <img id="db2-img" src={create} alt="acct" />
+        </div>
     </div>
   );
 }
@@ -101,8 +108,13 @@ function Dashboard3() {
         </h3>
       </div>
       <div id="db3">
-        <button id="FbBtn">Join Today!</button>
-        <img src={hands} alt="acct" width="600" height="320" />
+        <div className="join">
+          <img id="fb" src={fb} alt="Facebook" />
+          <button id="FbBtn">Join Today!</button>
+        </div>
+        <div className="join">
+          <img id="hands-img" src={hands} alt="acct" width="600" height="320" />
+        </div>
       </div>
     </div>
   );
