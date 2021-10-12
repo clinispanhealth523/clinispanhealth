@@ -10,6 +10,7 @@ import BrowseStudies from './components/BrowseStudies.js'
 import './index.css'
 import './signUp.css'
 import './HomePage.css'
+import './browseStudies.css'
 
 
 ReactDOM.render(
