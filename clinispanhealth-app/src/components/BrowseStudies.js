@@ -3,7 +3,8 @@ import Banner from './Banner'
 const BrowseStudies = () => {
     return (
         <div>
-            <Banner text='browse-studies'/>
+            <Banner color='browse-studies'/>
+            
         </div>
     )
 }

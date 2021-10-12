@@ -9,7 +9,7 @@ import { faComments } from '@fortawesome/free-solid-svg-icons'
 function HomePage() {
   return (
     <div>
-      <Banner text='home'/>
+      <Banner color='home'/>
       <ContactBtn />
       <Dashboard />
       <Dashboard2 />

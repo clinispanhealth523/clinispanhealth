@@ -12,19 +12,19 @@ const SignUpHeader = () => {
     return (
         <div className='signUpHeader'>
             <div className='containerH'>
-                <Link to="/home">
+                <Link className='link'to="/home">
                     <div className='cshHeader'>
                     </div>
                 </Link>
             </div>
             <div className='containerH2'>
-                <Link to='/browse-studies'>
+                <Link className='link'to='/browse-studies'>
                     <HyperLink name='browse'/>
                 </Link>
-                <Link to="/login">
+                <Link className='link'to="/login">
                     <HyperLink name='login'/>
                 </Link>
-                <Link to='/'>
+                <Link className='link'to='/'>
                     <SignUpButton text='Sign Up'/>
                 </Link>
                 
