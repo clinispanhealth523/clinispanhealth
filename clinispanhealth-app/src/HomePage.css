@@ -61,6 +61,14 @@ body {
   padding-bottom: 4vh;
   padding-right: 2vw;
   padding-left: 2vw;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav:hover {
+  background-color: #989898;
 }
 
 .dashboard {
@@ -246,10 +254,10 @@ p {
   color: #059EC5;
 }
 
+#na {
+  color: black;
+}
+
 button:hover {
   background-color: #989898;
 }
-
-/* img {
-  padding-left: 2vw;
-} */

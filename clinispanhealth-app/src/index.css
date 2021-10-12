@@ -2,14 +2,6 @@ body {
     margin: 0;
 }
 
-.linkH:hover {
-    background-color: #989898;
-}
-
-.link, .linkH {
+.link {
     text-decoration: none;
-}
-
-#na {
-    color: black;
 }
