@@ -1,22 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import SignUpHeader from './components/SignUpHeader.js'
 import SignUp from './components/signUp.js'
-import HomePage from './HomePage.js'
+import Login from './components/Login.js'
+import HomePage from './HomePage.js';
+import BrowseStudies from './components/BrowseStudies.js'
+
 
 import './index.css'
-import './signUp.css';
+import './signUp.css'
+import './HomePage.css'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <SignUpHeader />
       {/*Declaring routes in the section below */}
       <Switch>
-        <Route path="/" exact component={() => <SignUp />} />
-        <Route path="/home" exact component={() => <HomePage />} />
+        <Route path="/" component={SignUp} exact/>
+        <Route path="/home" component={HomePage}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/browse-studies" component={BrowseStudies}/>
       </Switch>
     </Router>
   </React.StrictMode>,

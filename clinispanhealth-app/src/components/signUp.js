@@ -17,7 +17,7 @@ const SignUp = () => {
                     <EnterField forName='pw' label="Re-enter Password"/>
                     <EnterField forName='zipcode' label='Zip Code'/>
                     <EnterField forName='phone-number' label='Phone Number' placeholder='1-234-567-8910'/>
-                    <SignUpButton className='long'/>
+                    <SignUpButton className='long' text="Sign Up"/>
                 </div>
             </div>
         </div>

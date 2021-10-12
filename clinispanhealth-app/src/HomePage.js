@@ -1,5 +1,5 @@
 import './HomePage.css';
-import logo from './images/CSH Logo.png'
+import Banner from './components/Banner';
 import create from './images/create-acct.PNG'
 import hands from './images/hands.PNG'
 import fb from './images/fb.png'
@@ -9,7 +9,7 @@ import { faComments } from '@fortawesome/free-solid-svg-icons'
 function HomePage() {
   return (
     <div>
-      <Banner />
+      <Banner text='home'/>
       <ContactBtn />
       <Dashboard />
       <Dashboard2 />
@@ -18,22 +18,6 @@ function HomePage() {
   );
 }
 
-function Banner() {
-    return (
-      <div className="navbar">
-        <div id="left-navbar">
-          <button className="nav" id="home">Home</button>
-          <button className="nav">Studies For You</button>
-          <button className="nav">Browse Studies</button>
-          <button className="nav">Manage Profile</button>
-          <button className="nav">FAQ</button>
-        </div>
-        <div id="right-navbar">
-          <img src={logo} alt="logo" width="300" height="100"/>
-        </div>  
-      </div>
-    );
-}
 
 function ContactBtn() {
   return (

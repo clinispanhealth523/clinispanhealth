@@ -5,7 +5,7 @@ import SignUpButton from "./SignUpButton"
 import HyperLink from "./HyperLink"
 
 // The header will act as a navigation router for react with links to different sites
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // The header exists as a function
 const SignUpHeader = () => {
@@ -18,9 +18,15 @@ const SignUpHeader = () => {
                 </Link>
             </div>
             <div className='containerH2'>
+                <Link to='/browse-studies'>
                     <HyperLink name='browse'/>
+                </Link>
+                <Link to="/login">
                     <HyperLink name='login'/>
-                    <SignUpButton/>
+                </Link>
+                <Link to='/'>
+                    <SignUpButton text='Sign Up'/>
+                </Link>
                 
             </div>
         </div> 

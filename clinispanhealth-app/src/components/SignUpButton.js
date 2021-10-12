@@ -4,11 +4,11 @@ The 'long' is in reference to the sign up button at the end of the form fields. 
 to the sign up button beside the 'login' hyperlink at the top of the page.
 */
 
-const SignUpButton = ({className}) => {
+const SignUpButton = ({className, text}) => {
     const classN = className === 'long' ? 'long' : 'signUpButton'
 
     return (
-        <button className={classN}><b>Sign Up</b></button>
+        <button className={classN}><b>{text}</b></button>
     )
 }
 
