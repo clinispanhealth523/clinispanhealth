@@ -22,8 +22,23 @@ ReactDOM.render(
         <Route path="/home" component={HomePage}/>
         <Route path="/login" component={Login}/>
         <Route path="/browse-studies" component={BrowseStudies}/>
+        <Route path="/test" component = {Test}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+function Test() {
+  const [data, setData] = React.useState(null);
+  
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
+  return (
+        <p>{!data ? "Loading..." : data}</p>
+  );
+}
