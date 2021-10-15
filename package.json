@@ -11,7 +11,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/kyruu/clinispanhealth/issues"
   },
-  "homepage": "https://github.com/kyruu/clinispanhealth#readme"
+  "homepage": "https://github.com/kyruu/clinispanhealth#readme",
+  "engines": {
+    "node": "v14.15.4"
+  }
 }
