@@ -1,0 +1,46 @@
+#profileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#profileTile {
+    width: 70%;
+    height: 150vh;
+    background-color: white;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#fieldsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+    margin-top: 4vh;
+}
+
+.fieldsCol {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.input {
+    border-radius: 1px;
+    border-width: 1px;
+    border-color: #989898 ;
+}
+
+.input:focus {
+    outline: #059EC5;
+}
+
+#profile-h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
