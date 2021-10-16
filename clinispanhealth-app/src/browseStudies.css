@@ -63,11 +63,22 @@
     border-style: solid;
     border-color: #059ec5;
     background-color: white;
-    height: 200px;
-    width: 25%;
+    height: 300px;
+    width: 28%;
     margin: 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
 
+.trialBox:hover {
+    transform: scale(1.1);
+    border-color: #989898;
+}
+
+.studyContainer {
+    height: 100px;
+    width: 100%;
 }
