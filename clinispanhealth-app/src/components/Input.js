@@ -6,7 +6,7 @@ const Input = (props) => {
  
     return (
         <div className='form'>
-            <label forName={type}>{props.label}</label><br/>
+            <label className="fieldLabel" forName={type}>{props.label}</label><br/>
             <input className="input" type={type} placeholder={placeholder} width={props.width}></input>
         </div>
     )

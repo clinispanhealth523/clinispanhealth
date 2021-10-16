@@ -31,10 +31,27 @@
     justify-content: flex-start;
 }
 
+#missionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 85%;
+    margin-top: 2vh;
+}
+
+#mission {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    color: #059EC5;
+    font-size: small;
+    font-weight: 100;
+    font-style: normal;
+}
+
 .input {
-    border-radius: 1px;
+    border-radius: 5px;
     border-width: 1px;
-    border-color: #989898 ;
+    border-color: #e4e1e1;
+    margin-top: 1vh;
 }
 
 .input:focus {
@@ -43,4 +60,9 @@
 
 #profile-h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+.fieldLabel {
+    font-size: 12px;
+    font-weight: 100;
 }
