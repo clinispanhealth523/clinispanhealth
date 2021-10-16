@@ -1,5 +1,4 @@
 // server/index.js
-// server/index.js
 const path = require('path');
 const express = require('express');
 
@@ -23,3 +22,4 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
