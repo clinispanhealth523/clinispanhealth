@@ -13,7 +13,22 @@ class BrowseStudies extends Component  {
     }
 
     componentDidMount() {
-        axios.get('https://clinicaltrials.gov/api/query/study_fields?expr=covid&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=1&max_rnk=10&fmt=json')
+        var min = Math.trunc(Math.random()*10)
+        var max = min+10
+        /*TO DO:
+
+        OPTIONS TO SORT BY:
+        https://clinicaltrials.gov/api/info/study_fields_list
+        shows a list of fields that we can potentially allow the user to sort by on the page
+
+        WHEN SEARCHING FOR SPECIFIC STUDIES
+        -- users can enter a search term in the search box, and the link above must be updated by adding expr='' after 'studyfields?'
+
+
+        -- users can choose how many studies to show per page. 10, 50, 100, etc. This will be updated by changing the max_rank=''
+        */
+        axios.get('https://clinicaltrials.gov/api/query/study_fields?fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=' + 
+        min + '&max_rnk=' + max + '&fmt=json')
         .then(response => {
             /* 
             
@@ -27,12 +42,6 @@ class BrowseStudies extends Component  {
            -- ['LocationCity']
            -- ['LocationState']
 
-           OPTIONS TO SORT BY:
-           https://clinicaltrials.gov/api/info/study_fields_list
-           shows a list of fields that we can potentially allow the user to sort by on the page
-
-           WHEN SEARCHING FOR SPECIFIC STUDIES
-           -- users can enter a search term in the search box, and the link above must be updated by changing expr=''
 
             */
            //alert(response.data['StudyFieldsResponse']['StudyFields'])
