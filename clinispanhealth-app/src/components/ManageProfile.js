@@ -4,7 +4,7 @@ import ProfileTile from './ProfileTile';
 const ManageProfile = () => {
     return (
         <div>
-            <Banner />
+            <Banner color='manage-profile'/>
             <ProfileTile />
         </div>
     );
