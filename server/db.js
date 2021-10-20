@@ -38,19 +38,72 @@ function SQLRead(sql) {
     });
 }
 
-// CREATES THE INITIAL USER TABLE
+// RESET THE DATABASE
+function resetDB() {
+    executeSQL('DROP TABLE IF EXISTS Patient');
+    executeSQL('DROP TABLE IF EXISTS Admin');
+    executeSQL('DROP TABLE IF EXISTS Partner');
+    executeSQL('DROP TABLE IF EXISTS Manager');
+    executeSQL('DROP TABLE IF EXISTS Study');
+    executeSQL('DROP TABLE IF EXISTS Condition');
+    createUserTables();
+}
+
+// CREATES THE INITIAL USER TABLES
 function createUserTables() {
+
+    // Patient Table
     executeSQL('CREATE TABLE IF NOT EXISTS Patient (' +
         'id int PRIMARY KEY NOT NULL,' +
         'email VARCHAR(255) UNIQUE NOT NULL,' + 
-        'password CHAR(60),' +
+        'password CHAR(64),' +
         'zipcode int,' + 
         'gender VARCHAR(255),' +
         'dob DATE,' +
         'nickname VARCHAR(255),' +
         'display_email VARCHAR(255),' +
-        'phone int)'
+        'phone int, ' +
+        'referral_code VARCHAR(60))'
     );
+
+    // Admin Table
+    executeSQL('CREATE TABLE IF NOT EXISTS Admin (' +
+        'id int PRIMARY KEY NOT NULL,' +
+        'email VARCHAR(255) UNIQUE NOT NULL)'
+    );
+
+    // Partner Table
+    executeSQL('CREATE TABLE IF NOT EXISTS Partner (' +
+        'id int PRIMARY KEY NOT NULL,' +
+        'name VARCHAR(255) UNIQUE NOT NULL)'
+    );
+
+    // Study Manager Table
+    executeSQL('CREATE TABLE IF NOT EXISTS Manager (' +
+        'id int PRIMARY KEY NOT NULL,' +
+        'email VARCHAR(255) UNIQUE NOT NULL,' +
+        'partner int, '+
+        'FOREIGN KEY (partner) REFERENCES Partner(id))'
+    );
+
+    // Study Table
+    executeSQL('CREATE TABLE IF NOT EXISTS Study (' +
+        'nct int PRIMARY KEY NOT NULL,' +
+        'name VARCHAR(255),' +
+        'description MEDIUMTEXT,' +
+        'partner int,' + 
+        'FOREIGN KEY (partner) REFERENCES Partner(id))'
+    );
+
+    // Patient/Study Condition Table
+   executeSQL('CREATE TABLE IF NOT EXISTS StudyCondition (' +
+        'id int PRIMARY KEY NOT NULL,' +
+        'name VARCHAR(255) UNIQUE NOT NULL)'
+    );
+
+    // Study Characteristic Table
+
+
 }
 
 // INSERTS A ROW INTO THE PATIENT TABLE from the create profile
@@ -69,4 +122,7 @@ function getPatients() {
 createPatient('jdoe@gmail.com','puppylover123','27514','9191234567');
 getPatients();
 */
+
+createUserTables();
+
 
