@@ -1,18 +1,24 @@
 // Testing connection with mySQL
 import mysql from 'mysql2'
+import 'dotenv/config'
 
-const USER = 'bd9f90002d4bf7'
-const PW = 'b49b72fb'
-const HOST = 'us-cdbr-east-04.cleardb.com'
-const DB = 'heroku_2a1887659f30667'
 
 // CONNECTS TO THE DATABASE
+/*
 var con = mysql.createConnection({
-    host: HOST,
-    user: USER,
-    password: PW,
-    database: DB
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PW,
+    database: process.env.DB
 });
+*/
+
+// A test function for jest
+function sum(a,b) {
+    return a + b;
+}
+
+export default sum;
 
 // GENERAL SQL EXECUTION
 function executeSQL(sql) {
@@ -214,4 +220,5 @@ function getPatients() {
 createPatient('jdoe@gmail.com','puppylover123','27514','9191234567');
 getPatients();
 */
+console.log("Hey");
 
