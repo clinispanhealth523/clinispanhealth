@@ -1,5 +1,5 @@
 // Testing connection with mySQL
-import mysql from 'mysql2';
+const mysql = require('mysql2');
 
 const USER = 'bd9f90002d4bf7'
 const PW = 'b49b72fb'
