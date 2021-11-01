@@ -11,29 +11,24 @@ const DB = 'heroku_2a1887659f30667'
 export default function testConnection() {
     // Wrap everything in a promise
     return new Promise(function(resolve, reject) {
+        // Create the connection
+        const con = mysql.createConnection({
+            host: HOST,
+            user: USER,
+            password: PW,
+            database: DB
+        });
 
-    // Create the connection
-    const con = mysql.createConnection({
-        host: HOST,
-        user: USER,
-        password: PW,
-        database: DB
-    });
+        // Establish the connection and return a result message
+        con.connect(function(err) {
+            const result = err ? "Failure" : "Success";
+            resolve(result);
+        });
 
-    // Establish the connection and return a result message
-    con.connect(function(err) {
-        const result = err ? "Failure" : "Success";
-        resolve(result);
-    });
-
-    console.log("This happens");
-    // Close the connection
-    con.end();
-    console.log("That happens");
+        // Close the connection
+        con.end();
     });
 }
-
-testConnection().then((result) => { console.log(result) });
 
 
 // GENERAL SQL EXECUTION
