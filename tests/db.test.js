@@ -1,4 +1,4 @@
-import testConnection from "./db.js";
+import testConnection from "../server/db.js";
 
 describe('Connection', () => {
     it('Successfully Connects', () => {

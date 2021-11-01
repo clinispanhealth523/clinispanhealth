@@ -1,4 +1,4 @@
-import logo from '../images/CSH Logo.png'
+import logo from '../images/CSH_Logo.png';
 import NavButton from './NavButton';
 
 // 'text' is being used to show which button needs to be highlighted in the nav bar depending on the page.
@@ -21,4 +21,4 @@ const Banner = ({color}) => {
     );
 }
 
-export default Banner
+export default Banner;
