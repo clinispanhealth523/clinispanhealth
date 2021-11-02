@@ -1,27 +1,30 @@
 // Testing connection with mySQL
 const mysql = require('mysql2');
 
-const USER = 'bd9f90002d4bf7'
-const PW = 'b49b72fb'
-const HOST = 'us-cdbr-east-04.cleardb.com'
-const DB = 'heroku_2a1887659f30667'
-
-
-// ESTABLISHES A CONNECTION
-export default function testConnection() {
-    // Wrap everything in a promise
+// CREATES A CONNECTION (given a user, host, pw, and db)
+// Returns that connection
+export function createCon(host, user, pw, db) {
     return new Promise(function(resolve, reject) {
-        // Create the connection
         const con = mysql.createConnection({
-            host: HOST,
-            user: USER,
-            password: PW,
-            database: DB
+            host: host,
+            user: user,
+            password: pw,
+            database: db
         });
 
+        resolve(con);
+    })
+}
+
+
+
+// ESTABLISHES A CONNECTION, given a connection
+export function testConnection(con) {
+    // Wrap everything in a promise
+    return new Promise(function(resolve, reject) {
         // Establish the connection and return a result message
         con.connect(function(err) {
-            const result = err ? "Failure" : "Success";
+            const result = err ? err : "Success";
             resolve(result);
         });
 
@@ -35,11 +38,9 @@ export default function testConnection() {
 function executeSQL(sql) {
     con.connect((err) => {
         if (err) throw err;
-        console.log("Connected");
         con.query(sql, (err, result) => {
             if (err) throw err;
-            console.log("Success");
-        })
+        });
     });
 }
 
@@ -89,77 +90,89 @@ function dropRelations() {
 }
 
 // CREATES THE INITIAL ENTITY TABLES IN THE DB
+// Returns success unless an error arises
 function createEntities() {
 
-    // Patient Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Patient (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL,' + 
-        'password CHAR(64),' +
-        'zipcode int,' + 
-        'gender VARCHAR(255),' +
-        'dob DATE,' +
-        'nickname VARCHAR(255),' +
-        'display_email VARCHAR(255),' +
-        'phone int, ' +
-        'referral_code VARCHAR(60))'
-    );
+    return new Promise(function(resolve,reject) {
+        // Connect first
+        con.connect();
+        try {
+            // Patient Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Patient (' +
+            'id int PRIMARY KEY NOT NULL,' +
+            'email VARCHAR(255) UNIQUE NOT NULL,' + 
+            'password CHAR(64),' +
+            'zipcode int,' + 
+            'gender VARCHAR(255),' +
+            'dob DATE,' +
+            'nickname VARCHAR(255),' +
+            'display_email VARCHAR(255),' +
+            'phone int, ' +
+            'referral_code VARCHAR(60))'
+            );
 
-    // Admin Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Admin (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL)'
-    );
+            // Admin Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Admin (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'email VARCHAR(255) UNIQUE NOT NULL)'
+            );
 
-    // Partner Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Partner (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
+            // Partner Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Partner (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'name VARCHAR(255) UNIQUE NOT NULL)'
+            );
 
-    // Study Manager Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Manager (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL,' +
-        'partner int, '+
-        'FOREIGN KEY (partner) REFERENCES Partner(id))'
-    );
+            // Study Manager Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Manager (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'email VARCHAR(255) UNIQUE NOT NULL,' +
+                'partner int, '+
+                'FOREIGN KEY (partner) REFERENCES Partner(id))'
+            );
 
-    // Study Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Study (' +
-        'nct int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255),' +
-        'description MEDIUMTEXT,' +
-        'partner int,' + 
-        'FOREIGN KEY (partner) REFERENCES Partner(id))'
-    );
+            // Study Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Study (' +
+                'nct int PRIMARY KEY NOT NULL,' +
+                'name VARCHAR(255),' +
+                'description MEDIUMTEXT,' +
+                'partner int,' + 
+                'FOREIGN KEY (partner) REFERENCES Partner(id))'
+            );
 
-    // Patient/Study Condition Table
-   executeSQL('CREATE TABLE IF NOT EXISTS StudyCondition (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
+            // Patient/Study Condition Table
+        executeSQL('CREATE TABLE IF NOT EXISTS StudyCondition (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'name VARCHAR(255) UNIQUE NOT NULL)'
+            );
 
-    // Study Characteristic Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Characteristic (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
+            // Study Characteristic Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Characteristic (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'name VARCHAR(255) UNIQUE NOT NULL)'
+            );
 
-    // Ethnicity Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Ethnicity (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
+            // Ethnicity Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Ethnicity (' +
+                'id int PRIMARY KEY NOT NULL,' +
+                'name VARCHAR(255) UNIQUE NOT NULL)'
+            );
 
-    // Location Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Location (' +
-        'zipcode int PRIMARY KEY NOT NULL,' +
-        'city VARCHAR(255),' +
-        'state CHAR(2))'
-    );
-
-    console.log("Entities Created");
+            // Location Table
+            executeSQL('CREATE TABLE IF NOT EXISTS Location (' +
+                'zipcode int PRIMARY KEY NOT NULL,' +
+                'city VARCHAR(255),' +
+                'state CHAR(2))'
+            );
+        }
+        catch(error) {
+            resolve(error);
+        }
+        resolve("Success");
+        
+        // End the connection
+        con.end();
+    });
 }
 
 // CREATES THE RELATIONAL TABLES IN SQL
