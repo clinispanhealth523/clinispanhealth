@@ -16,8 +16,8 @@ describe('DB Management', () => {
         });
     });
 
-    it('Establishes DB Successfully', () => {
-    });
+    //it('Establishes DB Successfully', () => {
+    //});
 
 });
 
