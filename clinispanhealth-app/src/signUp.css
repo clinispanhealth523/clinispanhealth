@@ -8,7 +8,7 @@ background-color: #FFFFFF
 .cshHeader {
     height: 100px;
     width: 330px;
-    background-image: url("./images/CSH\ Logo.png");
+    background-image: url("./images/CSH_Logo.png");
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ background-color: #FFFFFF
 display: flex;
 align-items: center;
 width: 40%;
-background-color: #FFFFFF
+background-color: #FFFFFF;
 }
 
 .containerH2 {
@@ -60,7 +60,7 @@ background-color: #FFFFFF
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 800px;
     background-image: url('./images/cs-signup.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,8 +88,20 @@ a, .login {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 90%;
+    width: 40%;
+    background-color: whitesmoke;
+    opacity: 0.9;
+}
+
+.forms2 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
     width: 40%;
     background-color: whitesmoke;
     opacity: 0.9;
