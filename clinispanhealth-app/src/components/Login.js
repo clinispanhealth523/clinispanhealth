@@ -7,7 +7,7 @@ const Login = () => {
         <div>
             <SignUpHeader/>
             <div className='mainSignUp'>
-                <div className='forms'>
+                <div className='forms2'>
                     <b><p className='label'>Glad to have you back!</p></b>
                     <EnterField forName='emailAddress' label='Email Address' placeholder='e.g. abc123@gmail.com'/>
                     <EnterField forName='pw' label='Password'/>

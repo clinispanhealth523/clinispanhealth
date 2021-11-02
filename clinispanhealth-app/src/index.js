@@ -6,14 +6,14 @@ import Login from './components/Login.js'
 import HomePage from './HomePage.js';
 import BrowseStudies from './components/BrowseStudies.js'
 import ManageProfile from './components/ManageProfile.js'
-
+import FAQ from './components/FAQ.js'
 
 import './index.css'
 import './signUp.css'
 import './HomePage.css'
 import './browseStudies.css'
 import './ManageProfile.css'
-
+import './faq.css'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +25,7 @@ ReactDOM.render(
         <Route path="/login" component={Login}/>
         <Route path="/browse-studies" component={BrowseStudies}/>
         <Route path="/manage-profile" component={ManageProfile}/>
+        <Route path="/faq" component={FAQ}/>
         <Route path="/test" component = {Test}></Route>
       </Switch>
     </Router>
