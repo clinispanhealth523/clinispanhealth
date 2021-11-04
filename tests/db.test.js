@@ -1,14 +1,36 @@
-import { createCon, testConnection } from "../server/db.js";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-const USER = 'bd9f90002d4bf7'
-const PW = 'b49b72fb'
-const HOST = 'us-cdbr-east-04.cleardb.com'
-const DB = 'heroku_2a1887659f30667'
+import { 
+    testCon,
+    createSchema,
+    deleteSchema,
+    resetDB
+ } from "../server/db.js";
 
+describe('DB', () => {
+
+    it('Connects to DB', async () => {
+        expect(await testCon()).toBe("Success");
+    });
+
+    it('Deletes the Schema', async() => {
+        expect(await deleteSchema()).toBe("Success");
+    });
+
+    it('Creates the Schema', async () => {
+        expect(await createSchema()).toBe("Success");
+    });
+
+});
+
+
+
+/*
 
 describe('DB Management', () => {
 
-    it('Successfully Connects', () => {
+    it('Connects to DB', () => {
         return createCon(HOST,USER,PW,DB).then((con) => {
             return testConnection(con).then((result) => {
                 expect(result).toBe("Success");
@@ -16,10 +38,17 @@ describe('DB Management', () => {
         });
     });
 
-    //it('Establishes DB Successfully', () => {
-    //});
+    it('Establishes DB Entities', () => {
+        return createCon(HOST,USER,PW,DB).then((con) => {
+            return createEntities(con).then((result) => {
+                console.log(result);
+                expect(result).toBe("Success");
+            });
+        });
+    });
 
 });
 
 
+*/
 
