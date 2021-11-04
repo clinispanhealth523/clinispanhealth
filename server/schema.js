@@ -5,17 +5,20 @@ export const SCHEMA = {
     Patient: 'CREATE TABLE IF NOT EXISTS Patient (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' + 
+                'first VARCHAR(255),' +
+                'last VARCHAR(255),' +
                 'password CHAR(64),' +
                 'zipcode int,' + 
                 'gender VARCHAR(255),' +
                 'dob DATE,' +
                 'nickname VARCHAR(255),' +
                 'display_email VARCHAR(255),' +
-                'phone int, ' +
+                'phone VARCHAR(12), ' +
                 'referral_code VARCHAR(60))',  
     Admin: 'CREATE TABLE IF NOT EXISTS Admin (' +
                 'id int PRIMARY KEY NOT NULL,' +
-                'email VARCHAR(255) UNIQUE NOT NULL)',
+                'email VARCHAR(255) UNIQUE NOT NULL,' +
+                'password CHAR(64))',
     Partner: 'CREATE TABLE IF NOT EXISTS Partner (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
@@ -37,6 +40,7 @@ export const SCHEMA = {
     Manager: 'CREATE TABLE IF NOT EXISTS Manager (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' +
+                'password CHAR(64),' +
                 'partner int, '+
                 'FOREIGN KEY (partner) REFERENCES Partner(id))',
     Study: 'CREATE TABLE IF NOT EXISTS Study (' +

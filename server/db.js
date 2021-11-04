@@ -100,3 +100,39 @@ export async function deleteSchema() {
     await pool.end();
     return "Success";
 }
+
+// DICTIONARY TO STRINGS
+// Input: A dictionary
+// Output: A string of the keys and a string of the values
+export function dictToString(dict) {
+    let fields = '';
+    let values = ''
+    for (const [key,value] of Object.entries(dict)) {
+        fields += `${key},`
+        values += `'${value}',`
+    }
+    // Remove additional comma added on at the end
+    return [fields.slice(0,-1), values.slice(0,-1)];
+}
+
+// CREATES A NEW PATIENT IN THE DB
+// Input: A dictionary with any subset of patient information
+export async function createPatient(info) {
+    const [fields, values] = dictToString(info);
+    const conn = await createCon();
+    await conn.execute(
+        `INSERT INTO Patient (${fields}) VALUES (${values})`
+    );
+    await conn.end();
+    return "Success";
+}
+
+// RETRIEVES PATIENT INFO FROM THE DB
+// Input, all patient info provided
+// Output, a dictionary with the patient information
+export async function getPatient(email) {
+    const conn = await createCon();
+    const [result, fields] = await conn.execute(`SELECT * FROM Patient WHERE email = '${email}'`);
+    await conn.end();
+    return result[0];
+}
