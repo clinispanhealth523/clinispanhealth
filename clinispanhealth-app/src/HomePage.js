@@ -1,10 +1,11 @@
-import './HomePage.css';
 import Banner from './components/Banner';
 import create from './images/create-acct.PNG'
 import hands from './images/hands.PNG'
 import fb from './images/fb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
+
+import './HomePage.css';
 
 function HomePage() {
   return (
@@ -82,7 +83,12 @@ function Dashboard2() {
   );
 }
 
+function join() {
+  window.open('https://www.facebook.com/CliniSpanHealth/');
+}
+
 function Dashboard3() {
+
   return (
     <div className="dashboard">
       <div className="h3">
@@ -94,7 +100,7 @@ function Dashboard3() {
       <div id="db3">
         <div className="join">
           <img id="fb" src={fb} alt="Facebook" />
-          <button id="FbBtn">Join Today!</button>
+          <button id="FbBtn" onClick={join}>Join Today!</button>
         </div>
         <div className="join">
           <img id="hands-img" src={hands} alt="acct" width="600" height="320" />
