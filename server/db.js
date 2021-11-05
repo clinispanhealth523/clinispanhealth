@@ -1,234 +1,138 @@
-// Testing connection with mySQL
-const mysql = require('mysql2');
+import mysql from "mysql2/promise";
+import 'dotenv/config';
 
-const USER = 'bd9f90002d4bf7'
-const PW = 'b49b72fb'
-const HOST = 'us-cdbr-east-04.cleardb.com'
-const DB = 'heroku_2a1887659f30667'
+import { SCHEMA } from './schema.js'
 
+const HOST = process.env.HOST;
+const USER = process.env.USER;
+const PW = process.env.PW;
+const DB = process.env.DB;
 
-// ESTABLISHES A CONNECTION
-export default function testConnection() {
-    // Wrap everything in a promise
-    return new Promise(function(resolve, reject) {
-        // Create the connection
-        const con = mysql.createConnection({
-            host: HOST,
-            user: USER,
-            password: PW,
-            database: DB
-        });
-
-        // Establish the connection and return a result message
-        con.connect(function(err) {
-            const result = err ? "Failure" : "Success";
-            resolve(result);
-        });
-
-        // Close the connection
-        con.end();
+// Creates a connection
+async function createCon() {
+    return await mysql.createConnection({
+        host: HOST,
+        user: USER,
+        password: PW,
+        database: DB
     });
 }
 
-
-// GENERAL SQL EXECUTION
-function executeSQL(sql) {
-    con.connect((err) => {
-        if (err) throw err;
-        console.log("Connected");
-        con.query(sql, (err, result) => {
-            if (err) throw err;
-            console.log("Success");
-        })
-    });
+// Test Connection
+export async function testCon() {
+    const conn = await createCon();
+    await conn.connect();
+    await conn.end();
+    return "Success";
 }
 
-// General execution for SQL queries that require a results field
-function SQLRead(sql) {
-    con.connect((err) => {
-        if (err) throw err;
-        console.log("Connected");
-        con.query(sql, (err, result, fields) => {
-            if (err) throw err;
-            console.log(result);
-        })
-    });
+// Creates a pool
+function createPool() {
+    return mysql.createPool({
+        host: HOST,
+        user: USER,
+        password: PW,
+        database: DB
+    }); 
 }
 
-// RESET THE DATABASE
-function resetDB() {
-    dropRelations();
-    dropEntities();
-    createEntities();
-    createRelations();
+// Creates the Initial Database Using a Connection Pool
+export async function createSchema() {
+    // First, create the pool
+    const pool = createPool();
+    // Write pool queries for primary entities, then secondary entities, then relations
+    await Promise.all([
+        pool.query(SCHEMA.Patient),
+        pool.query(SCHEMA.Admin),
+        pool.query(SCHEMA.Partner),
+        pool.query(SCHEMA.StudyCondition),
+        pool.query(SCHEMA.Characteristic),
+        pool.query(SCHEMA.Ethnicity),
+        pool.query(SCHEMA.Location)
+    ]);
+    await Promise.all([
+        pool.query(SCHEMA.Manager),
+        pool.query(SCHEMA.Study),
+    ]);
+    await Promise.all([
+        pool.query(SCHEMA.EnrolledIn),
+        pool.query(SCHEMA.HasEthnicity),
+        pool.query(SCHEMA.InterestedIn),
+        pool.query(SCHEMA.HasCondition),
+        pool.query(SCHEMA.ConditionFor),
+        pool.query(SCHEMA.CharacteristicFor),
+        pool.query(SCHEMA.LocatedIn)
+    ]);
+
+    await pool.end();
+
+    return "Success";
 }
 
-// Drops all entity tables
-function dropEntities() {
-    // Tables with foreign keys need to be removed first
-    executeSQL('DROP TABLE IF EXISTS Location');
-    executeSQL('DROP TABLE IF EXISTS Ethnicity');
-    executeSQL('DROP TABLE IF EXISTS Characteristic');
-    executeSQL('DROP TABLE IF EXISTS StudyCondition');
-    executeSQL('DROP TABLE IF EXISTS Study');
-    executeSQL('DROP TABLE IF EXISTS Manager');
-    executeSQL('DROP TABLE IF EXISTS Partner');
-    executeSQL('DROP TABLE IF EXISTS Admin');
-    executeSQL('DROP TABLE IF EXISTS Patient');  
+// Deletes the Schema
+
+export async function deleteSchema() {
+    const pool = createPool();
+    // To prevent foreign constraint errors, first drop relations
+    // Then drop entities with foreign keys, then drop primary entities
+    await Promise.all([
+        pool.query('DROP TABLE IF EXISTS HasEthnicity'),
+        pool.query('DROP TABLE IF EXISTS EnrolledIn'),
+        pool.query('DROP TABLE IF EXISTS InterestedIn'),
+        pool.query('DROP TABLE IF EXISTS HasCondition'),
+        pool.query('DROP TABLE IF EXISTS ConditionFor'),
+        pool.query('DROP TABLE IF EXISTS CharacteristicFor'),
+        pool.query('DROP TABLE IF EXISTS LocatedIn')
+    ]);
+    await Promise.all([
+        pool.query('DROP TABLE IF EXISTS Study'),
+        pool.query('DROP TABLE IF EXISTS Manager'),
+    ]);
+    await Promise.all([
+        pool.query('DROP TABLE IF EXISTS Location'),
+        pool.query('DROP TABLE IF EXISTS Ethnicity'),
+        pool.query('DROP TABLE IF EXISTS Characteristic'),
+        pool.query('DROP TABLE IF EXISTS StudyCondition'),
+        pool.query('DROP TABLE IF EXISTS Partner'),
+        pool.query('DROP TABLE IF EXISTS Admin'),
+        pool.query('DROP TABLE IF EXISTS Patient'), 
+    ]);
+    await pool.end();
+    return "Success";
 }
 
-// Drops all relation tables
-function dropRelations() {
-    executeSQL('DROP TABLE IF EXISTS HasEthnicity');
-    executeSQL('DROP TABLE IF EXISTS EnrolledIn');
-    executeSQL('DROP TABLE IF EXISTS InterestedIn');
-    executeSQL('DROP TABLE IF EXISTS HasCondition');
-    executeSQL('DROP TABLE IF EXISTS ConditionFor');
-    executeSQL('DROP TABLE IF EXISTS CharacteristicFor');
-    executeSQL('DROP TABLE IF EXISTS LocatedIn');
+// DICTIONARY TO STRINGS
+// Input: A dictionary
+// Output: A string of the keys and a string of the values
+export function dictToString(dict) {
+    let fields = '';
+    let values = ''
+    for (const [key,value] of Object.entries(dict)) {
+        fields += `${key},`
+        values += `'${value}',`
+    }
+    // Remove additional comma added on at the end
+    return [fields.slice(0,-1), values.slice(0,-1)];
 }
 
-// CREATES THE INITIAL ENTITY TABLES IN THE DB
-function createEntities() {
-
-    // Patient Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Patient (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL,' + 
-        'password CHAR(64),' +
-        'zipcode int,' + 
-        'gender VARCHAR(255),' +
-        'dob DATE,' +
-        'nickname VARCHAR(255),' +
-        'display_email VARCHAR(255),' +
-        'phone int, ' +
-        'referral_code VARCHAR(60))'
+// CREATES A NEW PATIENT IN THE DB
+// Input: A dictionary with any subset of patient information
+export async function createPatient(info) {
+    const [fields, values] = dictToString(info);
+    const conn = await createCon();
+    await conn.execute(
+        `INSERT INTO Patient (${fields}) VALUES (${values})`
     );
-
-    // Admin Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Admin (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL)'
-    );
-
-    // Partner Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Partner (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
-
-    // Study Manager Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Manager (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'email VARCHAR(255) UNIQUE NOT NULL,' +
-        'partner int, '+
-        'FOREIGN KEY (partner) REFERENCES Partner(id))'
-    );
-
-    // Study Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Study (' +
-        'nct int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255),' +
-        'description MEDIUMTEXT,' +
-        'partner int,' + 
-        'FOREIGN KEY (partner) REFERENCES Partner(id))'
-    );
-
-    // Patient/Study Condition Table
-   executeSQL('CREATE TABLE IF NOT EXISTS StudyCondition (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
-
-    // Study Characteristic Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Characteristic (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
-
-    // Ethnicity Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Ethnicity (' +
-        'id int PRIMARY KEY NOT NULL,' +
-        'name VARCHAR(255) UNIQUE NOT NULL)'
-    );
-
-    // Location Table
-    executeSQL('CREATE TABLE IF NOT EXISTS Location (' +
-        'zipcode int PRIMARY KEY NOT NULL,' +
-        'city VARCHAR(255),' +
-        'state CHAR(2))'
-    );
-
-    console.log("Entities Created");
+    await conn.end();
+    return "Success";
 }
 
-// CREATES THE RELATIONAL TABLES IN SQL
-function createRelations() {
-    executeSQL('CREATE TABLE IF NOT EXISTS EnrolledIn (' +
-        'patient int,' +
-        'study int,' +
-        'FOREIGN KEY (patient) REFERENCES Patient(id),' +
-        'FOREIGN KEY (study) REFERENCES Study(nct))'
-    );
-
-    executeSQL('CREATE TABLE IF NOT EXISTS HasEthnicity (' +
-        'patient int,' +
-        'ethnicity int,' +
-        'FOREIGN KEY (patient) REFERENCES Patient(id),' +
-        'FOREIGN KEY (ethnicity) REFERENCES Ethnicity(id))'
-    );
-
-
-    executeSQL('CREATE TABLE IF NOT EXISTS InterestedIn (' +
-        'patient int,' +
-        'characteristic int,' +
-        'FOREIGN KEY (patient) REFERENCES Patient(id),' +
-        'FOREIGN KEY (characteristic) REFERENCES Characteristic(id))'
-    );
-
-    executeSQL('CREATE TABLE IF NOT EXISTS HasCondition (' +
-        'patient int,' +
-        'study_condition int,' +
-        'FOREIGN KEY (patient) REFERENCES Patient(id),' +
-        'FOREIGN KEY (study_condition) REFERENCES StudyCondition(id))'
-    );
-
-    executeSQL('CREATE TABLE IF NOT EXISTS ConditionFor (' +
-        'study int,' +
-        'study_condition int,' +
-        'FOREIGN KEY (study) REFERENCES Study(nct),' +
-        'FOREIGN KEY (study_condition) REFERENCES StudyCondition(id))'
-    );
-
-    executeSQL('CREATE TABLE IF NOT EXISTS CharacteristicFor(' +
-        'characteristic int,' +
-        'study int,' +
-        'FOREIGN KEY (characteristic) REFERENCES Characteristic(id),' +
-        'FOREIGN KEY (study) REFERENCES Study(nct))'
-    );
-
-    executeSQL('CREATE TABLE IF NOT EXISTS LocatedIn(' +
-        'study int,' +
-        'location int,' +
-        'FOREIGN KEY (study) REFERENCES Study(nct),' +
-        'FOREIGN KEY (location) REFERENCES Location(zipcode))'
-    );
+// RETRIEVES PATIENT INFO FROM THE DB
+// Input, all patient info provided
+// Output, a dictionary with the patient information
+export async function getPatient(email) {
+    const conn = await createCon();
+    const [result, fields] = await conn.execute(`SELECT * FROM Patient WHERE email = '${email}'`);
+    await conn.end();
+    return result[0];
 }
-
-// INSERTS A ROW INTO THE PATIENT TABLE from the create profile
-function createPatient(email, password, zipcode, phone) {
-    executeSQL("INSERT INTO Patient (email, password, zipcode, phone)" +
-        `VALUES ('${email}' ,'${password}' , '${zipcode}', '${phone}')`
-    );
-}
-
-// RETRIEVES ALL ROWs FROM the Patient table
-function getPatients() {
-    SQLRead('SELECT * FROM Patient');
-}
-
-/*
-createPatient('jdoe@gmail.com','puppylover123','27514','9191234567');
-getPatients();
-*/
-
