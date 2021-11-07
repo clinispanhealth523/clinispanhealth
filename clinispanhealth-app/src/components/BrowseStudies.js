@@ -44,7 +44,6 @@ class BrowseStudies extends Component  {
 
 
             */
-           //alert(response.data['StudyFieldsResponse']['StudyFields'])
             this.setState({posts: response.data['StudyFieldsResponse']['StudyFields']})
         })
         .catch(error => {
