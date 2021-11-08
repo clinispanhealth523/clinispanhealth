@@ -119,16 +119,4 @@ describe('Frontend tests', function () {
 
         cy.get('.search').type("COVID-19")
     })
-
-    // it('Visits Home page and scrolls to Facebook button', function () {
-
-    //     cy.get('.cshHeader').click()
-
-    //     cy.scrollTo('bottom')
-
-    //     cy.get('#FbBtn').click()
-
-    //     cy.url().should('eq', 'https://www.facebook.com/CliniSpanHealth/')
-
-    // })
 })
