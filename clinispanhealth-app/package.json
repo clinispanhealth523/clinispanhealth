@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
@@ -10,6 +11,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.23.0",
+    "babel-jest": "^26.6.0",
     "mini-create-react-context": "^0.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +20,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -49,6 +51,10 @@
   "license": "ISC",
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.11",
+    "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^8.7.0"
+  },
+  "nyc": {
+    "all": true
   }
 }

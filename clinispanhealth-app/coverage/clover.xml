@@ -1,6 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636317581525" clover="3.2.0">
-  <project timestamp="1636317581526" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1636404156435" clover="3.2.0">
+  <project timestamp="1636404156435" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="11" files="70" classes="70"/>
+    <package name="coverage.lcov-report">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="block-navigation.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/coverage/lcov-report/block-navigation.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="prettify.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/coverage/lcov-report/prettify.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="sorter.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/coverage/lcov-report/sorter.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="cypress.integration">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="sample_spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/sample_spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="cypress.integration.1-getting-started">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="todo.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/1-getting-started/todo.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="cypress.integration.2-advanced-examples">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="actions.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/actions.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="aliasing.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/aliasing.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="assertions.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/assertions.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="connectors.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/connectors.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="cookies.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/cookies.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="cypress_api.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/cypress_api.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="files.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/files.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="local_storage.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/local_storage.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="location.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/location.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="misc.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/misc.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="navigation.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/navigation.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="network_requests.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/network_requests.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="querying.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/querying.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="spies_stubs_clocks.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/spies_stubs_clocks.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="traversal.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/traversal.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="utilities.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/utilities.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="viewport.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/viewport.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="waiting.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/waiting.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="window.spec.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/integration/2-advanced-examples/window.spec.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="cypress.plugins">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/plugins/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="cypress.support">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="commands.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/support/commands.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/cypress/support/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="instrumented">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="HomePage.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/HomePage.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="msg.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/msg.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="instrumented.components">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Banner.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Banner.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="BrowseStudies.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/BrowseStudies.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Checkbox.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Checkbox.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Dropdown.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Dropdown.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="EnterField.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/EnterField.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="FAQ.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/FAQ.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="HyperLink.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/HyperLink.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Input.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Input.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Login.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Login.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ManageProfile.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/ManageProfile.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="NavButton.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/NavButton.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProfileTile.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/ProfileTile.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="SignUpButton.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/SignUpButton.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="SignUpHeader.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/SignUpHeader.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="StudiesForYou.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/StudiesForYou.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Test.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/Test.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="TrialBox.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/TrialBox.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="signUp.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/instrumented/components/signUp.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="HomePage.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/HomePage.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="msg.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/msg.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Banner.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Banner.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="BrowseStudies.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/BrowseStudies.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Checkbox.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Checkbox.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Dropdown.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Dropdown.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="EnterField.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/EnterField.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="FAQ.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/FAQ.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="HyperLink.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/HyperLink.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Input.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Input.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Login.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Login.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ManageProfile.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/ManageProfile.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="NavButton.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/NavButton.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProfileTile.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/ProfileTile.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="SignUpButton.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/SignUpButton.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="SignUpHeader.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/SignUpHeader.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="StudiesForYou.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/StudiesForYou.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Test.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/Test.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="TrialBox.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/TrialBox.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="signUp.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/src/components/signUp.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="tests">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.test.js" path="C:/Users/kmaat/Documents/UNC 2021-2022/Fall 2021/COMP 523/clinispanhealth523/clinispanhealth/clinispanhealth-app/tests/index.test.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
   </project>
 </coverage>
