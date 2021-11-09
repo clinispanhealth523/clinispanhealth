@@ -1,6 +1,6 @@
 import Banner from './components/Banner';
-import create from './images/create-acct.png'
-import hands from './images/hands.png'
+import create from './images/create-acct.PNG'
+import hands from './images/hands.PNG'
 import fb from './images/fb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
