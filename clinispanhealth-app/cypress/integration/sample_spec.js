@@ -4,7 +4,9 @@ describe('Frontend tests', function () {
         // so we must tell it to visit our website with the `cy.visit()` command.
         // Since we want to visit the same URL at the start of all our tests,
         // we include it in our beforeEach function so that it runs before each test
-        cy.visit('https://clinispanhealth523.herokuapp.com/')
+
+        // CSH app must be running locally before calling "npx cypress open" in a separate terminal
+        cy.visit('localhost:3000')
       })
     it('Visits all pages from the navbar', function () {
 
@@ -13,8 +15,8 @@ describe('Frontend tests', function () {
         cy.url().should('include', '/home')
 
         // // Visit Studies For You page
-        // cy.contains('Studies For You').click()
-        // cy.url().should('include', '/studies-for-you')
+        cy.contains('Studies For You').click()
+        cy.url().should('include', '/studies-for-you')
 
         // Visit Browse Studies page
         cy.contains('Browse Studies').click()
@@ -118,5 +120,17 @@ describe('Frontend tests', function () {
         cy.contains('BROWSE STUDIES').click()
 
         cy.get('.search').type("COVID-19")
+
+        // Simulate mouseover event
+        cy.get('.trialBox').eq(0).trigger('mouseover')
+        cy.get('.trialBox').eq(0).should('have.css', 'border-color', 'rgb(5, 158, 197)')
+    })
+
+    it ('Visits Home page and clicks on Facebook button', function () {
+
+        cy.get('.cshHeader').click()
+
+        cy.get('#FbBtn').click()
+        
     })
 })
