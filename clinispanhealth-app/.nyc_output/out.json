@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\EnterField.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\EnterField.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\EnterField.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\EnterField.js",
     "statementMap": {
       "0": {
         "start": {
@@ -225,10 +225,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f0b61604a59cef8778dd2b33213d58cbe3f83a0e"
+    "hash": "baad9850f2783b1fe9f94a4fba07ad12edb56231"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpButton.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpButton.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpButton.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpButton.js",
     "statementMap": {
       "0": {
         "start": {
@@ -340,10 +340,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c73d2d61c1c0b8a83aa597dab2466b5946a9ed6b"
+    "hash": "9568ae7b01f603e8bf3d9d049f9c7d6d3149327f"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\HyperLink.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\HyperLink.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\HyperLink.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\HyperLink.js",
     "statementMap": {
       "0": {
         "start": {
@@ -575,10 +575,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "13a194bc0b0c33dd57d6fab4a34e37d81600dbc8"
+    "hash": "6a24f1ce62c80951ca2b47069b77f598b488a2ec"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpHeader.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpHeader.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpHeader.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\SignUpHeader.js",
     "statementMap": {
       "0": {
         "start": {
@@ -637,10 +637,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "529f67b895308aa1427ea4a0ccc0f6c5cef0c7ce"
+    "hash": "7789071147ece1ab3f9bed601902f67fb39b1aba"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\signUp.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\signUp.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\signUp.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\signUp.js",
     "statementMap": {
       "0": {
         "start": {
@@ -699,10 +699,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "e8a048fc673b2af50bcfa2446d92325cbf846525"
+    "hash": "7d837112250cce134cc39edcff2b619eb3792fd1"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Login.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Login.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Login.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Login.js",
     "statementMap": {
       "0": {
         "start": {
@@ -761,10 +761,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "42e0947d445f61c0fb284b2f07f9dc528fefcc34"
+    "hash": "0a58b244e6fc450ed09560c216e4f9917fb88be2"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\NavButton.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\NavButton.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\NavButton.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\NavButton.js",
     "statementMap": {
       "0": {
         "start": {
@@ -865,10 +865,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "349a73ccb6abfa8b1c19d7cbb81740dce6ac4d4a"
+    "hash": "34bc50dc81082fa9cb12f96ab31241f6f1f9cc39"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Banner.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Banner.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Banner.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Banner.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1129,10 +1129,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "da3f6650a9c9f1b9fe30755fe93af848689f4f5c"
+    "hash": "ef95c0e25a1a0a5fd2da8637165759bedb93943e"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\HomePage.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\HomePage.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\HomePage.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\HomePage.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1360,10 +1360,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b2b558b6bc87fde724f4a4102ae2528a04d85a45"
+    "hash": "90a7d294207f28e7a683186068907b8f7d1f68b6"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\StudiesForYou.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\StudiesForYou.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\StudiesForYou.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\StudiesForYou.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1422,10 +1422,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8f394d18b4adfdd1ed5f40884f208f8ad3748676"
+    "hash": "8a1f77b4844c191410d2a4c24947594aacff5c5f"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\TrialBox.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\TrialBox.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\TrialBox.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\TrialBox.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1521,15 +1521,15 @@
     },
     "b": {
       "0": [
-        32,
-        12
+        36,
+        8
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "574ce564e6752c0e6b31eabe44d47adb477031ad"
+    "hash": "c16771c9bfe57575bb3a1d09805b5e03867dce58"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\BrowseStudies.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\BrowseStudies.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\BrowseStudies.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\BrowseStudies.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1823,7 +1823,7 @@
       "3": 4,
       "4": 4,
       "5": 2,
-      "6": 2,
+      "6": 0,
       "7": 12,
       "8": 12,
       "9": 44
@@ -1832,7 +1832,7 @@
       "0": 12,
       "1": 4,
       "2": 2,
-      "3": 2,
+      "3": 0,
       "4": 12,
       "5": 44
     },
@@ -1843,10 +1843,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8c5a9740c077ad432e8796ab98ecc398e3c0fc12"
+    "hash": "639e81d838133054cdb512f44fb8d97106393bff"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Checkbox.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Checkbox.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Checkbox.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Checkbox.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2049,10 +2049,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2178f19da532ecca2a1e16fc3f650c7bb9c986c7"
+    "hash": "1e9a698601c11995dbcf02ba73fd1235937a6d9d"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Input.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Input.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Input.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Input.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2255,10 +2255,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "459c19c26ed487c569a3229bb8c161e2b1c5ebc2"
+    "hash": "034151b6737a8232906faaf918cfa0636c9f59aa"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ProfileTile.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ProfileTile.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ProfileTile.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ProfileTile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2317,10 +2317,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "66fa9595e35c072ac05a8748caa8b663c3829a7c"
+    "hash": "26c00b0b6478c5f10b16c8a674ad71629d042980"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ManageProfile.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ManageProfile.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ManageProfile.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\ManageProfile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2379,10 +2379,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c5758d32751fb46686fba798232c11cd56d62ac6"
+    "hash": "2e4a0d5b2017c21cabe9282afc6d75ef7fdbf34f"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Dropdown.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Dropdown.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Dropdown.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\Dropdown.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2441,10 +2441,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "e3f5c382c1e5e21299913e2d3c9f0f9ccf1eb4a6"
+    "hash": "45cc2efdf339184392b5a1374d6636bd4178a71b"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\FAQ.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\components\\FAQ.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\FAQ.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\components\\FAQ.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2503,10 +2503,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "669aa17b767a893de8d7ce2c3b3ce457ab04670d"
+    "hash": "3ad1786f6b938be154e8767daa8598b8f9303929"
   },
-  "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\index.js": {
-    "path": "C:\\Users\\kmaat\\Documents\\UNC 2021-2022\\Fall 2021\\COMP 523\\clinispanhealth523\\clinispanhealth\\clinispanhealth-app\\src\\index.js",
+  "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\index.js": {
+    "path": "C:\\Users\\ckoonce3\\projects\\comp523\\clinispanhealth\\clinispanhealth-app\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2737,6 +2737,6 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "236c0bcb92c60715710ab1882e1b1b83b36543c2"
+    "hash": "f0c71220efed371e80e13ce1559494e11646596c"
   }
 }
