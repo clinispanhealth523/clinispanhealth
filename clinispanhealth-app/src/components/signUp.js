@@ -1,8 +1,9 @@
-import EnterField from "./EnterField"
-import SignUpButton from "./SignUpButton"
 import SignUpHeader from "./SignUpHeader"
 
 import { useState } from "react";
+import { signUp } from "../apis/signUpSubmit";
+
+
 
 const SignUp = () => {
     
@@ -25,7 +26,7 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(inputs);
+        signUp(inputs);
     }
     
     return (

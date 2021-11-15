@@ -8,7 +8,7 @@ import {
     createPatient,
     getPatient,
     dictToString
- } from "../server/db.js";
+ } from "../../server/db.js";
 
 describe('DB Setup', () => {
     it('Connects to DB', async () => {
