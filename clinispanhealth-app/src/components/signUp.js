@@ -2,22 +2,107 @@ import EnterField from "./EnterField"
 import SignUpButton from "./SignUpButton"
 import SignUpHeader from "./SignUpHeader"
 
+import { useState } from "react";
+
 const SignUp = () => {
+    
+    const [inputs, setInputs] = useState({
+        first: "",
+        last: "",
+        email: "",
+        pw: "",
+        pw2: "",
+        zipcode: "",
+        phone: "",
+        referral: ""
+    });
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}));
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs);
+    }
+    
     return (
         <div>
             <SignUpHeader/>
             <div className="mainSignUp">
                 <div className='forms'>
-                    <b><p className='label'>Joining is free and secure. What are you waiting for?</p></b>
-                    <EnterField forName='fn' label='First Name'/>
-                    <EnterField forName='ln' label='Last Name'/>
-                    <EnterField forName='emailAddress' label='Email Address' placeholder='e.g. abc123@gmail.com'/>
-                    <EnterField forName='pw' label='Create Password'/>
-                    <EnterField forName='pw' label="Re-enter Password"/>
-                    <EnterField forName='zipcode' label='Zip Code'/>
-                    <EnterField forName='phone-number' label='Phone Number' placeholder='1-234-567-8910'/>
-                    <EnterField forName='fn' label='Referral Code'/>
-                    <SignUpButton className='long' text="Sign Up"/>
+                    <form onSubmit={handleSubmit}>
+                        <b><p className='label'>Joining is free and secure. What are you waiting for?</p></b>
+                        <label> First Name:
+                            <input
+                                type="text"
+                                name="first"
+                                value={inputs.first || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <label> Last Name:
+                            <input
+                                type="text"
+                                name="last"
+                                value={inputs.last || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <label> Email Address:
+                            <input
+                                type="text"
+                                name="email"
+                                value={inputs.email || ""}
+                                onChange={handleChange}
+                                placeholder='e.g. abc123@gmail.com'
+                            />
+                        </label><br /><br />
+                        <label> Create Password:
+                            <input
+                                type="text"
+                                name="pw"
+                                value={inputs.pw || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <label> Re-enter Password:
+                            <input
+                                type="text"
+                                name="pw2"
+                                value={inputs.pw2 || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <label> Zip Code:
+                            <input
+                                type="text"
+                                name="zipcode"
+                                value={inputs.zipcode || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <label> Phone Number:
+                            <input
+                                type="text"
+                                name="phone"
+                                value={inputs.phone || ""}
+                                onChange={handleChange}
+                                placeholder='1-234-567-8910'
+                            />
+                        </label><br /><br />
+                        <label> Referral Code:
+                            <input
+                                type="text"
+                                name="referral"
+                                value={inputs.referral || ""}
+                                onChange={handleChange}
+                            />
+                        </label><br /><br />
+                        <input type="submit" className='long' text="Sign Up" />
+                    </form>    
                 </div>
             </div>
         </div>
