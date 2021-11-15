@@ -59,3 +59,23 @@ Within Heroku, we are using the ClearDB MySQL add on for our database.
 * HTTP client: Axios
 
 ADRs reside within our package-lock.json file
+
+
+# Contributing
+To contribute to the project, a developer needs access to the GitHub repository. The owner of the repository is a user by the name of ‘clinispanhealth523’ and an associated password available above. For new developers, there are no specific styling / process conventions to know about, however, for testing the project uses Cypress for the front-end and Jest for the back-end.
+Information about the project can be viewed here: https://tarheels.live/comp523f21j/ 
+
+# Authors
+There are three major authors so far that contributed to the development of the CliniSpan website so far, and below lists their names and associated roles:
+
+Tiffany Shields (Webmaster | Full Stack Engineer)
+Calvin Koonce (Business Analyst | Client Manager)
+Kyle Maatallah (Full Stack Engineer)
+
+# License
+The source code is solely authorized for use by CliniSpan Health, and explicit permission must be granted by CliniSpan health for users to implement, modify, reproduce, or recreate this code. Due to the IP agreement concerning this project and HIPPA compliance, the project client has been tasked with discussing a possible license with their team member who is a specialist on HIPPA standards. Due to this, further information about a license is expected from the client soon.
+
+
+# Acknowledgements
+John Dinger is a mentor that has worked with students in COMP523 for a while now and has been a great resource for the team; thanks a lot, John!
+
