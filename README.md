@@ -4,15 +4,15 @@ This project establishes a new web-based platform for CliniSpan Health, a startu
 
 # Getting Started
 
-_Prerequisites:_
+***Prerequisites:***
 Users must install Git before cloning the repository.  For information on installing Git, please visit the following link: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git 
 
 The recommended package manager is node and the recommended code editor is Visual Studio Code.  All installation commands provided are for node package manager.
 
-_Cloning the Repository:_
+***Cloning the Repository:***
 To clone the repository, run “git clone https://github.com/clinispanhealth523/clinispanhealth.git” in the terminal.  A new folder called “clinispanhealth” will appear with the code.  
 
-_Installing Dependencies:_
+***Installing Dependencies:***
 Type “cd clinispanhealth” in the terminal to navigate to the project root folder.  After navigating to the root folder, type “npm install” in the command terminal to install dependencies.
 
 
