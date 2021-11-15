@@ -1,4 +1,8 @@
-# clinispanhealth
+# CliniSpan Health Platform
+
+# This project establishes a new web-based platform for CliniSpan Health, a startup that increases enrollment in clinical trials by facilitating relationships between researchers and study volunteers.
+
+# Getting Started
 
 # Testing
 
