@@ -69,7 +69,9 @@ Information about the project can be viewed here: https://tarheels.live/comp523f
 There are three major authors so far that contributed to the development of the CliniSpan website so far, and below lists their names and associated roles:
 
 Tiffany Shields (Webmaster | Full Stack Engineer)
+
 Calvin Koonce (Business Analyst | Client Manager)
+
 Kyle Maatallah (Full Stack Engineer)
 
 # License
