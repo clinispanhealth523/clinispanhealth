@@ -1,6 +1,6 @@
 # CliniSpan Health Project
 
-This project establishes a new web-based platform for CliniSpan Health, a startup that increases enrollment in clinical trials by facilitating relationships between researchers and study volunteers
+This project establishes a new web-based platform for CliniSpan Health, a startup that increases enrollment in clinical trials by facilitating relationships between researchers and study volunteers.
 
 # Getting Started
 
@@ -13,7 +13,9 @@ The recommended package manager is node and the recommended code editor is Visua
 To clone the repository, run “git clone https://github.com/clinispanhealth523/clinispanhealth.git” in the terminal.  A new folder called “clinispanhealth” will appear with the code.  
 
 ***Installing Dependencies:***
-Type “cd clinispanhealth” in the terminal to navigate to the project root folder.  After navigating to the root folder, type “npm install” in the command terminal to install dependencies.
+To install dependencies, navigate to the project root folder, `\clinispanhealth` within the terminal and run "npm install"
+
+Dependencies for the front-end React app are also required.  To install these dependencies, navigate to the `\clinispanhealth-app` folder within the terminal and run "npm install"
 
 
 # Testing
@@ -30,9 +32,10 @@ Frontend testing:
 
 Backend testing:
 1. Navigate to the `/clinispanhealth` folder within the terminal.
-2. Run "npm build" to build the react app locally.
+2. Run "npm run build" to build the react app locally.
 3. Run "npm start" to start up a local server.
-4. Run "jest --coverage" in the terminal to get a test coverage report
+4. Open a second terminal and navigate to `/clinispanhealth` again.
+5. Run "jest --coverage" to get a test coverage report.
 
 # Deployment
 
