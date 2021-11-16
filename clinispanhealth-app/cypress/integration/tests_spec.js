@@ -98,10 +98,7 @@ describe('Frontend tests', function () {
         cy.get('input[type=text').eq(8).type('Male')
         .should('have.value', 'Male')
 
-        cy.get('input[type=text').eq(9).type('White')
-        .should('have.value', 'White')
-
-        cy.get('#largeInput').type('Zoloft, Hygroton, Adderall')
+        cy.get('#medsTextArea').type('Zoloft, Hygroton, Adderall')
         .should('have.value', 'Zoloft, Hygroton, Adderall')
 
         cy.get('input[type=checkbox').eq(7).check()
