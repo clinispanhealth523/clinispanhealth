@@ -1,14 +1,53 @@
-export function signUp(inputs) {
+import axios from 'axios';
+
+
+export async function signUp(inputs, host) {
+
+    console.log(host);
 
     // Test the first name
     testName(inputs.first, "first");
+    // Test the last name
     testName(inputs.last, "last");
+    // Test the email address
+    testEmail(inputs.email);
+    
+    // Axios Post Requests
+    /*
+    const result = await axios({
+        method: 'post',
+        url: `${host}/signUp`,
+        data: inputs
+    });
+
+    if (response.status !== 200) {
+        const error = response.statusText
+    }
+    */
+    
+    const result = await axios({
+        method: 'get',
+        url: `${host}/api`,
+        responseType: 'json'
+    });
+
+    console.log(result.data);
+
     return true;
 }
 
 // Test the first and last names
 export function testName(tname, type) {
-    if (tname === "") throw `Please enter a ${type} name`;
+    // Name fields cannot be blank
+    if (tname === '') throw `Please enter a ${type} name`;
+    // Name fields cannot include numbers or any special characters (besides dashes and spaces)
     if (! /^[a-zA-Z\s-]*$/.test(tname)) throw `Please include only letters, dashes, and spaces in the ${type} name`;
     return true;
+}
+
+
+// Tests an email address
+export function testEmail(email) {
+    // Email field cannot be blank
+    if (email === '') throw 'Please enter an email'
 }

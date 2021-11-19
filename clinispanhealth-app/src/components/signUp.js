@@ -26,7 +26,7 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signUp(inputs);
+        signUp(inputs, window.location.origin);
     }
     
     return (

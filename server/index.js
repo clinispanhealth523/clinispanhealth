@@ -19,7 +19,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../clinispanhealth-app/build', 'index.html'));
 });
 
+// Handle axios posts.
+// Perform server sides checks and use the database functions.
+
+
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
 
