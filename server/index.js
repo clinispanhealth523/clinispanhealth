@@ -1,11 +1,16 @@
 // server/index.js
 import path from 'path';
 import express from 'express';
+import bodyParser from 'body-parser';
+import { createPatient } from './db.js';
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 //import { createPatient } from './db.js';
 
 const PORT = process.env.PORT || 3001;
 
-const app = express();
 
 // Have Node serve the files for our built React app
 //app.use(express.static(path.resolve(__dirname, '../clinispanhealth-app/build')));
@@ -20,18 +25,35 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../clinispanhealth-app/build', 'index.html'));
 });
 
+//Handle POST request from Sign Up page
+
+app.post("/manage-profile", (req, res) => {
+  console.log("Submitting to manage profile...");
+  console.log(req.body);
+});
 
 app.post("/signUp", (req, res) => {
     console.log(req.body);
+     createPatient(req.body).catch(
+       function(err) {
+         throw err;
+       }
+     );
+
 });
 
-
-//Handle POST requests
+app.post("/login", (req, red) => {
+  console.log(req.body);
+  // const user = getPatient(req.body.email);
+})
 
 
 // Handle axios posts.
 // Perform server sides checks and use the database functions.
 
+
+
+// The app listens to the PORT
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });

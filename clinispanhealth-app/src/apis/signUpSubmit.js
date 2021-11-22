@@ -13,13 +13,15 @@ export async function signUp(inputs, host) {
     
     // Axios Post Requests
 
-    await axios({
-        method: 'post',
+
+// send the data in JSON format to the server
+    const result = await axios({
+        method: 'POST',
         url: `${host}/signUp`,
         responseType: 'json',
-        data: `${inputs}`
-    }).catch(function(error) {
-        alert(error);
+        data: inputs
+    }).catch(function(err) {
+        console.log(err);
     });
 
 
