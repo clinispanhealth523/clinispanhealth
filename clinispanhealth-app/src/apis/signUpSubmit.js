@@ -3,29 +3,32 @@ import axios from 'axios';
 
 export async function signUp(inputs, host) {
 
-    console.log(host);
 
     // Test the first name
-    testName(inputs.first, "first");
+   /* testName(inputs.first, "first");
     // Test the last name
     testName(inputs.last, "last");
     // Test the email address
-    testEmail(inputs.email);
+    testEmail(inputs.email); */
     
     // Axios Post Requests
-    /*
-    const result = await axios({
+
+    await axios({
         method: 'post',
         url: `${host}/signUp`,
-        data: inputs
+        responseType: 'json',
+        data: `${inputs}`
+    }).catch(function(error) {
+        alert(error);
     });
 
-    if (response.status !== 200) {
+
+   /* if (response.status !== 200) {
         const error = response.statusText
-    }
-    */
+    }*/
     
-    const result = await axios({
+    
+   /* const result = await axios({
         method: 'get',
         url: `${host}/api`,
         responseType: 'json'
@@ -33,7 +36,7 @@ export async function signUp(inputs, host) {
 
     console.log(result.data);
 
-    return true;
+    return true; */
 }
 
 // Test the first and last names
