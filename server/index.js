@@ -30,6 +30,7 @@ app.post("/manage-profile", (req, res) => {
 
 app.post("/signUp", (req, res) => {
     console.log(req.body);
+    res.send("POST request for signup");
   /*  
      createPatient(req.body).catch(
        function(err) {
@@ -39,8 +40,9 @@ app.post("/signUp", (req, res) => {
        */
 });
 
-app.post("/login", (req, red) => {
+app.post("/login", (req, res) => {
   console.log(req.body);
+  res.send("Success");
   // const user = getPatient(req.body.email);
 })
 

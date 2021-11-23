@@ -41,7 +41,7 @@ describe('First and Last Name Tests', () => {
         inputs.last = "Schmoe";
     });
 
-    it('Detects a Blank First Name', async () => {
+    it('Rejects a Blank First Name', async () => {
         inputs.first = '';
         expect(await (async (inputs) => {
             try {
@@ -52,7 +52,7 @@ describe('First and Last Name Tests', () => {
         })(inputs)).toBe("Please enter a first name");
     });
 
-    it('Detects an Illegal Name', async () => {
+    it('Rejects an Illegal Name', async () => {
         expect(await (async (inputs) => {
             inputs.first = "Xae12";
             try {

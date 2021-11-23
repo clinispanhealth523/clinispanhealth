@@ -5,21 +5,25 @@ export async function signUp(inputs, host) {
 
 
     // Test the first name
-   /* testName(inputs.first, "first");
+    testName(inputs.first, "first");
     // Test the last name
     testName(inputs.last, "last");
     // Test the email address
-    testEmail(inputs.email); */
+    testEmail(inputs.email);
     
     // Axios Post Requests
 
 
 // send the data in JSON format to the server
+  console.log(inputs);
+
     const result = await axios({
-        method: 'POST',
+        method: 'post',
         url: `${host}/signUp`,
-        responseType: 'json',
-        data: inputs
+        data: {
+            first: 'Joe',
+            last: 'Schmoe'
+        }
     }).catch(function(err) {
         console.log(err);
     });
@@ -37,8 +41,8 @@ export async function signUp(inputs, host) {
     });
 
     console.log(result.data);
-
-    return true; */
+    */
+    return true;
 }
 
 // Test the first and last names
