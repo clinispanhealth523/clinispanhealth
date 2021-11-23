@@ -23,11 +23,24 @@
     align-items: center;
 }
 
-#inner-container {
-    width: 60%;
+.inner-container {
+    width: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+}
+
+#innerDivContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2vw;
+}
+
+#divImg {
+    width: 510px;
+    height: 300px;
 }
 
 #faq-subtitle {
@@ -38,9 +51,31 @@
     margin-bottom: 1vh;
 }
 
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-style: normal;
+    font-weight: 200;
+}
+
+.diversityContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #dropdowns {
     margin-top: 4vh;
-    width: 60%;
+    width: 80%;
 }
 
 .line {
@@ -58,11 +93,31 @@
     font-size: larger;
     color: black;
     font-style: normal;
+    padding-right: 2vw;
+}
+
+.questionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .arrow {
-    margin-left: 1vw;
+    padding-right: 1vw;
     width: 20px;
     height: 20px;
     color: #059EC5;
+}
+
+.hiddenPara {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: large;
+}
+
+.svg {
+    width: 100px;
+    height: 100px;
 }
