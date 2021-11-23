@@ -2,7 +2,7 @@
 import path from 'path'
 import express from 'express';
 import bodyParser from 'body-parser';
-import { getPatientById, createPatient, deleteSchema, createSchema, createCon } from './db.js';
+import { getPatientById, createPatient, getPatient } from './db.js';
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,17 +23,14 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve('./clinispanhealth-app/build'), 'index.html');
 });
 
-//Handle POST request from Sign Up page
-
+// Test function for manage-profile submit
 app.post("/manage-profile", (req, res) => {
   console.log("Submitting to manage profile...");
   console.log(req.body);
 });
 
+// Retrieves entry values from the Sign Up page in JSON format and creates a new patient in the database
 app.post("/signUp", (req, res) => {
-    console.log("Data retrieved from sign-up page in JSON format: \n");
-    console.log(req.body);
-    console.log("Creating a patient...");
      createPatient(req.body).catch(
        function(err) {
          throw err;
@@ -43,28 +40,38 @@ app.post("/signUp", (req, res) => {
     
 });
 
+// Retrieves the patient with the specified user ID, and sends the patient back once the promise is completed
+// Can be useful for patient-specific pages after the patient logs in
+
 app.get("/user/:id", (req, res) => {
   const id = req.params.id;
-  const patient = getPatientById(id).then({
-    function(user) {
-      console.log(user);
-    }
+  getPatientById(id).then(function(patient) {
+    res.send(patient);
   }).catch(function(err) {
     console.log(err);
   });
-  res.send("Retrieving user...");
-  console.log(patient);
-})
+});
+
+// Retrieves the patient with the specified email, and sends the patient data back once the promise is compeleted
+// Can be useful for Login where the email is required
+
+app.get("/user/:email", (req, res) => {
+  const email = req.params.email;
+  getPatient(email).then(function(patient) {
+    res.send(patient);
+  }).catch(function(err) {
+    console.log(err);
+  })
+});
+
+// test function for login button submit
 
 app.post("/login", (req, res) => {
   console.log(req.body);
-  res.send("Success");
-  // const user = getPatient(req.body.email);
+  res.send("Success.");
 })
 
 
-// Handle axios posts.
-// Perform server sides checks and use the database functions.
 
 
 

@@ -24,13 +24,13 @@ export async function signUp(inputs, host) {
         url: `${host}/signUp`,
         responseType: JSON, 
         data: {
-            "first": inputs.first,
-            "last": inputs.last,
-            "email": inputs.email,
-            "password": inputs.password,
-            "zipcode": inputs.zipcode,
-            "phone": inputs.phone,
-            "referral_code": inputs.referral_code
+            first: inputs.first,
+            last: inputs.last,
+            email: inputs.email,
+            password: inputs.password,
+            zipcode: inputs.zipcode,
+            phone: inputs.phone,
+            referral_code: inputs.referral_code
         }
     }).catch(function(err) {
         console.log(err);
