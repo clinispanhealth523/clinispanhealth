@@ -3,26 +3,34 @@ import axios from 'axios';
 
 export async function signUp(inputs, host) {
 
-
+/*
     // Test the first name
     testName(inputs.first, "first");
     // Test the last name
     testName(inputs.last, "last");
     // Test the email address
     testEmail(inputs.email);
+     */
+    
     
     // Axios Post Requests
+    
+    // INSERT CHECKING HERE TO SEE IF INPUTS.PASSWORD AND INPUTS.PW2 MATCH
 
 
 // send the data in JSON format to the server
-  console.log(inputs);
-
     const result = await axios({
-        method: 'post',
+        method: 'POST',
         url: `${host}/signUp`,
+        responseType: JSON, 
         data: {
-            first: 'Joe',
-            last: 'Schmoe'
+            "first": inputs.first,
+            "last": inputs.last,
+            "email": inputs.email,
+            "password": inputs.password,
+            "zipcode": inputs.zipcode,
+            "phone": inputs.phone,
+            "referral_code": inputs.referral_code
         }
     }).catch(function(err) {
         console.log(err);

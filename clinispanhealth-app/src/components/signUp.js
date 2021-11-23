@@ -11,11 +11,11 @@ const SignUp = () => {
         first: "",
         last: "",
         email: "",
-        pw: "",
+        password: "",
         pw2: "",
         zipcode: "",
         phone: "",
-        referral: ""
+        referral_code: ""
     });
 
     const handleChange = (event) => {

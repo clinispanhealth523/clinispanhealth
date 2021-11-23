@@ -1,9 +1,11 @@
 // server/index.js
 import path from 'path'
 import express from 'express';
-import { createPatient } from './db.js';
+import bodyParser from 'body-parser';
+import { getPatientById, createPatient, deleteSchema, createSchema, createCon } from './db.js';
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3001;
 
@@ -29,16 +31,30 @@ app.post("/manage-profile", (req, res) => {
 });
 
 app.post("/signUp", (req, res) => {
+    console.log("Data retrieved from sign-up page in JSON format: \n");
     console.log(req.body);
-    res.send("POST request for signup");
-  /*  
+    console.log("Creating a patient...");
      createPatient(req.body).catch(
        function(err) {
          throw err;
-       }
-     );
-       */
+       } 
+     ); 
+    res.send("POST request for signup completed.");
+    
 });
+
+app.get("/user/:id", (req, res) => {
+  const id = req.params.id;
+  const patient = getPatientById(id).then({
+    function(user) {
+      console.log(user);
+    }
+  }).catch(function(err) {
+    console.log(err);
+  });
+  res.send("Retrieving user...");
+  console.log(patient);
+})
 
 app.post("/login", (req, res) => {
   console.log(req.body);

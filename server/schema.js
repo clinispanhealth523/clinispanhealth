@@ -3,7 +3,7 @@
 export const SCHEMA = {
     // PRIMARY ENTITIES (no foreign keys)
     Patient: 'CREATE TABLE IF NOT EXISTS Patient (' +
-                'id int PRIMARY KEY NOT NULL,' +
+                'id int PRIMARY KEY NOT NULL AUTO_INCREMENT,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' + 
                 'first VARCHAR(255),' +
                 'last VARCHAR(255),' +

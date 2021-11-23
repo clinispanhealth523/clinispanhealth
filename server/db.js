@@ -8,6 +8,7 @@ const USER = process.env.USER;
 const PW = process.env.PW;
 const DB = process.env.DB;
 
+
 // Creates a connection
 async function createCon() {
     return await mysql.createConnection({
@@ -134,5 +135,14 @@ export async function getPatient(email) {
     const conn = await createCon();
     const [result, fields] = await conn.execute(`SELECT * FROM Patient WHERE email = '${email}'`);
     await conn.end();
+    return result[0];
+}
+
+export async function getPatientById(id) {
+    const c = await createCon();
+    const [result, fields] = await c.execute(`SELECT * FROM Patient WHERE id = '${id}'`).catch(err => {
+        return err;
+    })
+    await c.end();
     return result[0];
 }

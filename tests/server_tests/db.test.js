@@ -23,7 +23,7 @@ describe('DB Setup', () => {
 });
 
 describe('Patient Functions', () => {
-    
+
     const patient = {
         email: "jdoe@gmail.com",
         password: "puppylover123",
@@ -31,7 +31,7 @@ describe('Patient Functions', () => {
         last: "Doe",
         zipcode: 27514,
         phone: '19191234567',
-    }
+    } 
 
     it('Converts the dict to SQL strings', async () => {
         const [fields, values] = dictToString(patient);
