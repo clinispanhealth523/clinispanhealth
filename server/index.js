@@ -1,19 +1,15 @@
 // server/index.js
-import path from 'path';
+import path from 'path'
 import express from 'express';
-import bodyParser from 'body-parser';
 import { createPatient } from './db.js';
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-//import { createPatient } from './db.js';
 
 const PORT = process.env.PORT || 3001;
 
 
 // Have Node serve the files for our built React app
-//app.use(express.static(path.resolve(__dirname, '../clinispanhealth-app/build')));
+app.use(express.static(path.resolve('./clinispanhealth-app/build')));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
@@ -22,7 +18,7 @@ app.get("/api", (req, res) => {
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../clinispanhealth-app/build', 'index.html'));
+  res.sendFile(path.resolve('./clinispanhealth-app/build'), 'index.html');
 });
 
 //Handle POST request from Sign Up page
@@ -34,12 +30,13 @@ app.post("/manage-profile", (req, res) => {
 
 app.post("/signUp", (req, res) => {
     console.log(req.body);
+  /*  
      createPatient(req.body).catch(
        function(err) {
          throw err;
        }
      );
-
+       */
 });
 
 app.post("/login", (req, red) => {
