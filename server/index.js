@@ -29,7 +29,14 @@ app.post("/manage-profile", (req, res) => {
   console.log(req.body);
 });
 
-// Retrieves entry values from the Sign Up page in JSON format and creates a new patient in the database
+// Test function for login button submit
+
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  res.send("Success.");
+});
+
+// Retrieves entry values from the Sign Up page in JSON format and creates a new patient in the database; COMPLETE
 app.post("/signUp", (req, res) => {
      createPatient(req.body).catch(
        function(err) {
@@ -42,6 +49,7 @@ app.post("/signUp", (req, res) => {
 
 // Retrieves the patient with the specified user ID, and sends the patient back once the promise is completed
 // Can be useful for patient-specific pages after the patient logs in
+// COMPLETE
 
 app.get("/user/:id", (req, res) => {
   const id = req.params.id;
@@ -54,6 +62,7 @@ app.get("/user/:id", (req, res) => {
 
 // Retrieves the patient with the specified email, and sends the patient data back once the promise is compeleted
 // Can be useful for Login where the email is required
+// COMPLETE
 
 app.get("/user/:email", (req, res) => {
   const email = req.params.email;
@@ -64,12 +73,7 @@ app.get("/user/:email", (req, res) => {
   })
 });
 
-// test function for login button submit
 
-app.post("/login", (req, res) => {
-  console.log(req.body);
-  res.send("Success.");
-})
 
 
 

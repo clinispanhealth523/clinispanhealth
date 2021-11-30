@@ -13,7 +13,7 @@ class BrowseStudies extends Component  {
     }
 
     componentDidMount() {
-        var min = Math.trunc(Math.random()*10)
+        var min = Math.trunc(Math.random()*5)
         var max = min+10
         /*TO DO:
 
@@ -58,16 +58,22 @@ class BrowseStudies extends Component  {
                 <div className='searchContainer'>
                 <div className='searchBox'>
                     <div className='searchLabel'>
-                        <p class='label'>Search:</p>
+                        <p className='label'>Search:</p>
                     </div>
                     <input className='search' placeholder='Enter a specific search term...'></input>
                 </div>
                 <div className='searchBox'>
                     <div className='searchLabel'>
-                        <p class='label'>Sort:</p>
+                        <p className='label'>Sort:</p>
                     </div>
-                    <div>(In Progress)</div>
-                    
+                <div className="dropdown">
+                    <button className="dropbtn"><b>Location</b></button>
+                    <div className="dropdown-content">
+                        <p>Sort 1</p>
+                        <p>Sort 2</p>
+                        <p>Sort 3</p>
+                    </div>
+                </div>
                 </div>
             </div>
             
