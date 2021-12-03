@@ -32,9 +32,9 @@ const Login = () => {
         );
         // set the state of the user
         setUser(response.data)
-        alert(response.data.email)
+      //  alert(response.data.email)
         // store the user in localStorage
-        localStorage.setItem('user', response.data.email)
+        localStorage.setItem('user', response.data.first + "," + response.data.last + "," + response.data.email)
     }
 
     if (user.id >= 0) {
@@ -51,12 +51,13 @@ const Login = () => {
       }
 
       if (loggedIn) {
+        localStorage.setItem('user', "")
        return(
      <div>
         <SignUpHeader/>
         <div className='mainSignUp'>
             <div className='forms2'>
-            <div><h2>You're already logged in as {loggedIn}!</h2></div>
+            <div><h2>Logging out...</h2></div>
             </div>
         </div>
     </div>

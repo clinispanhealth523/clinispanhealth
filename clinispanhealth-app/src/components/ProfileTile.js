@@ -1,8 +1,7 @@
 import { useState } from "react";
 import React, { Component } from 'react'
 import { getUser } from '../apis/api.js'
-const loggedIn = localStorage.getItem('user');
-
+const loggedIn = localStorage.getItem('user').split(",")
 const ProfileTile = () => {
 
     // Returns the user if the user is logged in S
@@ -13,13 +12,13 @@ const ProfileTile = () => {
         })
     
    const [user, setUser] = useState({
-        first: userData.first,
-        last: userData.last,
+        first: loggedIn[0],
+        last: loggedIn[1],
         dob: "",
         location: "",
-        displayName: userData.email,
-        displayEmail: userData.email,
-        phone: userData.phone,
+        displayName: "",
+        displayEmail: loggedIn[2],
+        phone: "",
         gender: "",
         ethnicity: "",
         meds: "",
@@ -89,7 +88,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="first"
                                     class="input"
-                                    value={user.first || ""}
+                                    value={user.first}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -100,7 +99,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="last"
                                     class="input"
-                                    value={user.last || ""}
+                                    value={user.last}
                                     onChange={handleChange}
                                 />
                             </label>
