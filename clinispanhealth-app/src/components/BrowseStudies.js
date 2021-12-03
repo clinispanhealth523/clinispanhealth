@@ -13,7 +13,7 @@ class BrowseStudies extends Component  {
     }
 
     componentDidMount() {
-        var min = Math.trunc(Math.random()*5)
+        var min = Math.trunc(Math.random()*10)+1
         var max = min+10
         /*TO DO:
 

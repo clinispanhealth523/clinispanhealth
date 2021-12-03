@@ -13,7 +13,7 @@ class StudiesForYou extends Component  {
 }
 
 componentDidMount() {
-    var min = Math.trunc(Math.random()*10)
+    var min = Math.trunc(Math.random()*10)+1
     var max = min+10
     /*TO DO:
 
