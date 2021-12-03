@@ -10,14 +10,26 @@ import {
     dictToString
  } from "../../server/db.js";
 
+ // For tests that need to run sequentially, place tests in different describe blocks
 describe('DB Setup', () => {
     it('Connects to DB', async () => {
         expect(await testCon()).toBe("Success");
     });
+
+    it('Creates the Schema', async () => {
+        expect(await createSchema()).toBe("Success");
+    });
+
+});
+
+describe('DB Schema Deletion', () => {
     it('Deletes the Schema', async() => {
         expect(await deleteSchema()).toBe("Success");
     });
-    it('Creates the Schema', async () => {
+});
+
+describe('DB Schema Creation', () => {
+    it('Creates the Schema', async() => {
         expect(await createSchema()).toBe("Success");
     });
 });
