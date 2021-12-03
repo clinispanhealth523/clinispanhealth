@@ -4,15 +4,16 @@ import { useState } from "react";
 import axios from 'axios';
 
 
-
+const loggedIn = localStorage.getItem('user')
 const Login = () => {
 
     // Under development code for setting login state
 
 
     const [user, setUser] = useState({
+        id: -1,
         email: "",
-        pw: ""
+        pw: "",
     });
 
     const handleChange = (event) => {
@@ -25,19 +26,42 @@ const Login = () => {
         e.preventDefault();
         // send the username and password to the server
 
-        const response = await axios.post(
-            window.location.origin + `/login`,
+        const response = await axios.get(
+            window.location.origin + `/user/` + user.email,
             user
         );
         // set the state of the user
         setUser(response.data)
+        alert(response.data.email)
         // store the user in localStorage
         localStorage.setItem('user', response.data.email)
     }
 
-    if (user.loggedIn) {
-        return <div>{user.email} is loggged in, try out /manage-profile</div>;
-      } 
+    if (user.id >= 0) {
+       return (
+        <div>
+        <SignUpHeader/>
+        <div className='mainSignUp'>
+            <div className='forms2'>
+            <div><h2>You've successfully logged in, {user.first} {user.last}!</h2></div>
+            </div>
+        </div>
+    </div>
+       )
+      }
+
+      if (loggedIn) {
+       return(
+     <div>
+        <SignUpHeader/>
+        <div className='mainSignUp'>
+            <div className='forms2'>
+            <div><h2>You're already logged in as {loggedIn}!</h2></div>
+            </div>
+        </div>
+    </div>
+       )
+      }
 
     return (
         <div>

@@ -2,6 +2,7 @@ import SignUpHeader from "./SignUpHeader"
 
 import { useState } from "react";
 import { signUp } from "../apis/signUpSubmit";
+import { getUser } from "../apis/api";
 
 
 
@@ -28,6 +29,24 @@ const SignUp = () => {
         event.preventDefault();
         signUp(inputs, window.location.origin);
     }
+
+        const loggedIn = localStorage.getItem('user')
+        
+        if (loggedIn) {
+            const result = getUser(loggedIn).then(function(res) {
+                return res.data
+            })
+            return (
+                <div>
+                <SignUpHeader/>
+                <div className='mainSignUp'>
+                    <div className='forms2'>
+                    <div><h2>You're already logged in. The sign out button isn't implemented yet.</h2></div>
+                    </div>
+                </div>
+            </div>
+            )
+        }
     
     return (
         <div>
