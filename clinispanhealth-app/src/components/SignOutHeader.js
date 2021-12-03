@@ -19,7 +19,7 @@ const SignOutHeader = () => {
                 <button className='signUpButton' onClick={
                     function() { 
                         localStorage.setItem('user', '')
-                        window.location.href='/'
+                        window.location.href= window.location.origin + '/'
                     }
                 }>Logout</button>
                 

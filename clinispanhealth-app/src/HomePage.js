@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import './HomePage.css';
 
 // This user retrieves the first name as index 0, the last name as index 1 and the email as index 2
-const user = localStorage.getItem('user').split(',')
+const user = window.localStorage.getItem('user').split(',')
 
 function HomePage() {
   return (
