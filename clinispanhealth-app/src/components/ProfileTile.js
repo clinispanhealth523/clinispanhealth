@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React, { Component } from 'react'
 import { getUser } from '../apis/api.js'
-const loggedIn = localStorage.getItem('user').split(",")
+const loggedIn = window.localStorage.getItem('user').split(",")
 const ProfileTile = () => {
 
     // Returns the user if the user is logged in S

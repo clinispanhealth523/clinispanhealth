@@ -2,6 +2,7 @@ import SignUpButton from "./SignUpButton";
 import SignUpHeader from "./SignUpHeader";
 import { useState } from "react";
 import axios from 'axios';
+import SignOutHeader from "./SignOutHeader";
 
 const Login = () => {
 
@@ -32,11 +33,26 @@ const Login = () => {
         setUser(response.data)
       //  alert(response.data.email)
         // store the user in localStorage
-        localStorage.setItem('user', response.data.first + ',' + response.data.last + ',' + response.data.email)
-        window.location.href='/home'
+        window.localStorage.setItem('user', response.data.first + ',' + response.data.last + ',' + response.data.email)
     }
+    const loggedIn = window.localStorage.getItem('user').split(',')
 
-
+    if (loggedIn[1]) {
+        return (
+            <div>
+            <SignOutHeader/>
+            <div className='mainSignUp'>
+                <div className='forms2'>
+                        <b><p className='label'>Logged in as {loggedIn[0]} {loggedIn[1]}</p></b>
+                         
+                </div>
+            </div>
+        </div>
+        )
+    }
+      
+        
+    
     return (
         <div>
             <SignUpHeader/>

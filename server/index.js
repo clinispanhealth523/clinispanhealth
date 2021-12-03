@@ -36,7 +36,6 @@ app.post("/login", (req, res) => {
   res.send({
     email: req.body.email,
     pw: req.body.pw,
-    loggedIn: true
   })
 });
 
@@ -47,6 +46,7 @@ app.post("/signUp", (req, res) => {
          throw err;
        } 
      ); 
+     console.log(req.body)
     res.send("POST request for signup completed.");
     
 });

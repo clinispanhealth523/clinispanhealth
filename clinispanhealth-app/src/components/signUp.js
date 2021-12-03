@@ -27,12 +27,12 @@ const SignUp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         signUp(inputs, window.location.origin);
-        window.location.href='/'
+
     }
 
-        const loggedIn = localStorage.getItem('user').split(',')
+        const loggedIn = window.localStorage.getItem('user').split(',')
         
-        if (loggedIn[0].length > 1) {
+        if (loggedIn[1]) {
 
             return (
                 <div>
