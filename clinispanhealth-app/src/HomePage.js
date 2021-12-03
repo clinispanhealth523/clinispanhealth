@@ -4,6 +4,7 @@ import hands from './images/hands.PNG'
 import fb from './images/fb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 import './HomePage.css';
 
@@ -45,14 +46,18 @@ function Dashboard() {
           <p className="tile-p">Find Studies for You</p>
           <p className="tile-sp">Find clinical studies recommended specifically for you based on your conditions and geographic location.</p>
           <div className="tileBtnDiv">
-            <button className="tileBtn">Studies for you</button>
+            <Link to="/studies-for-you">
+              <button className="tileBtn">Studies for you</button>
+            </Link>
           </div>
         </div>
         <div className="tile">
           <p className="tile-p">Start browsing studies</p>
           <p className="tile-sp">Start browsing available clinical studies and request a free screening appointment if you want to participate.</p>
           <div className="tileBtnDiv">
-            <button className="tileBtn">Browse studies</button>
+            <Link to="/browse-studies">
+              <button className="tileBtn">Browse studies</button>
+            </Link>
           </div>
         </div>
         <div className="tile">
@@ -60,7 +65,9 @@ function Dashboard() {
           <p className="tile-sp"><strong>Please complete your profile to improve your experience.</strong> 
           Keep your profile information updated so we can notify you when studies of interest are available.</p>
           <div className="tileBtnDiv">
-            <button className="tileBtn">Manage profile</button>
+            <Link to="/manage-profile">
+              <button className="tileBtn">Manage profile</button>
+            </Link>
           </div>
         </div>
       </div>

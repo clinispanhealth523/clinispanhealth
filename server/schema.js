@@ -8,6 +8,7 @@ export const SCHEMA = {
                 'first VARCHAR(255),' +
                 'last VARCHAR(255),' +
                 'password CHAR(64),' +
+                'salt CHAR(32),' +
                 'zipcode int,' + 
                 'gender VARCHAR(255),' +
                 'dob DATE,' +
@@ -18,7 +19,8 @@ export const SCHEMA = {
     Admin: 'CREATE TABLE IF NOT EXISTS Admin (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' +
-                'password CHAR(64))',
+                'password CHAR(64),' +
+                'salt CHAR(32))',
     Partner: 'CREATE TABLE IF NOT EXISTS Partner (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
@@ -41,6 +43,7 @@ export const SCHEMA = {
                 'id int PRIMARY KEY NOT NULL,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' +
                 'password CHAR(64),' +
+                'salt CHAR(32),' +
                 'partner int, '+
                 'FOREIGN KEY (partner) REFERENCES Partner(id))',
     Study: 'CREATE TABLE IF NOT EXISTS Study (' +

@@ -168,6 +168,17 @@ p {
   font-size: medium;
   font-weight: 100;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+}
+
+/* a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+} */
+
+button {
+  cursor: pointer;
 }
 
 #db2-img {
