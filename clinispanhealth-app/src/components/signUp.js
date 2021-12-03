@@ -68,13 +68,13 @@ const SignUp = () => {
                                 onChange={handleChange}
                             />
                         </label><br /><br />
-                        <label> Email Address:
+                        <label> Username:
                             <input
                                 type="text"
                                 name="email"
                                 value={inputs.email || ""}
                                 onChange={handleChange}
-                                placeholder='e.g. abc123@gmail.com'
+                                placeholder='e.g. abc123'
                             />
                         </label><br /><br />
                         <label> Create Password:

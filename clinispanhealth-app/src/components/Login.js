@@ -44,16 +44,16 @@ const Login = () => {
                 <div className='forms2'>
                     <form onSubmit={handleSubmit}>
                         <b><p className='label'>Glad to have you back!</p></b>
-                         <label> Email Address:
+                         <label> Username:
                             <input
                                 type="text"
                                 name="email"
                                 value={user.email || ""}
                                 onChange={handleChange}
-                                placeholder='e.g. abc123@gmail.com'
+                                placeholder='e.g. abc123'
                             />
                         </label><br /><br />
-                        <label> Create Password:
+                        <label> Password:
                             <input
                                 type="password"
                                 name="pw"
