@@ -102,7 +102,7 @@ const SignUp = () => {
                                 onChange={handleChange}
                             />
                         </label><br /><br />
-                        <input type="submit" className='long' text="Sign Up" />
+                        <input type="submit" className='long' text="Sign Up" value="Sign Up" />
                     </form>    
                 </div>
             </div>
