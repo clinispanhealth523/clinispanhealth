@@ -133,7 +133,9 @@ export async function createPatient(info) {
 // Output, a dictionary with the patient information
 export async function getPatient(email) {
     const conn = await createCon();
-    const [result, fields] = await conn.execute(`SELECT * FROM Patient WHERE email = '${email}'`);
+    const [result, fields] = await conn.execute(`SELECT * FROM Patient WHERE email = '${email}'`).catch(err => {
+        return err;
+    })
     await conn.end();
     return result[0];
 }

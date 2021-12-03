@@ -1,21 +1,38 @@
 import { useState } from "react";
-import { signUp } from "../apis/signUpSubmit";
+import React, { Component } from 'react'
+import { getUser } from '../apis/api.js'
+const loggedIn = localStorage.getItem('user');
 
 const ProfileTile = () => {
 
-    const [inputs, setInputs] = useState({
-        first: "",
-        last: "",
+    // Returns the user if the user is logged in S
+   const userData = getUser(loggedIn)
+        .then(function(res) {
+         //   alert(res.data)
+            return res.data
+        })
+    
+   const [user, setUser] = useState({
+        first: userData.first,
+        last: userData.last,
         dob: "",
         location: "",
-        displayName: "",
-        displayEmail: "",
-        phone: "",
+        displayName: userData.email,
+        displayEmail: userData.email,
+        phone: userData.phone,
         gender: "",
         ethnicity: "",
         meds: "",
-        check: ""
-    });
+        check: "" 
+   })
+
+  
+
+
+   /* const [inputs, setInputs] = useState({
+
+       
+    }); */
 
     const [checkboxes, setCheckboxes] = useState({
         breastCancer: false,
@@ -45,7 +62,7 @@ const ProfileTile = () => {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
+        setUser(values => ({...values, [name]: value}));
     }
 
     const handleBoxChange = (event) => {
@@ -56,7 +73,6 @@ const ProfileTile = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signUp(inputs);
     }
 
     return (
@@ -73,7 +89,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="first"
                                     class="input"
-                                    value={inputs.first || ""}
+                                    value={user.first || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -84,7 +100,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="last"
                                     class="input"
-                                    value={inputs.last || ""}
+                                    value={user.last || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -98,7 +114,7 @@ const ProfileTile = () => {
                                     name="dob"
                                     class="input"
                                     placeholder="mm/dd/yyyy"
-                                    value={inputs.dob || ""}
+                                    value={user.dob || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -109,7 +125,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="location"
                                     class="input"
-                                    value={inputs.location || ""}
+                                    value={user.location || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -122,7 +138,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="displayName"
                                     class="input"
-                                    value={inputs.displayName || ""}
+                                    value={user.displayName}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -133,7 +149,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="displayEmail"
                                     class="input"
-                                    value={inputs.displayEmail || ""}
+                                    value={user.displayEmail}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -146,7 +162,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="phone"
                                     class="input"
-                                    value={inputs.phone || ""}
+                                    value={user.phone || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -165,7 +181,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="gender"
                                     class="input"
-                                    value={inputs.gender || ""}
+                                    value={user.gender || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -176,7 +192,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="ethnicity"
                                     class="input"
-                                    value={inputs.ethnicity || ""}
+                                    value={user.ethnicity || ""}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -193,7 +209,7 @@ const ProfileTile = () => {
                                 type="text"
                                 name="meds"
                                 class="input"
-                                value={inputs.meds || ""}
+                                value={user.meds || ""}
                                 onChange={handleChange}
                             />
                     </div>

@@ -37,6 +37,7 @@ export async function signUp(inputs, host) {
     });
 
 
+
    /* if (response.status !== 200) {
         const error = response.statusText
     }*/
