@@ -53,30 +53,3 @@ describe('Patient Functions', () => {
 });
 
 
-
-/*
-
-describe('DB Management', () => {
-
-    it('Connects to DB', () => {
-        return createCon(HOST,USER,PW,DB).then((con) => {
-            return testConnection(con).then((result) => {
-                expect(result).toBe("Success");
-            });
-        });
-    });
-
-    it('Establishes DB Entities', () => {
-        return createCon(HOST,USER,PW,DB).then((con) => {
-            return createEntities(con).then((result) => {
-                console.log(result);
-                expect(result).toBe("Success");
-            });
-        });
-    });
-
-});
-
-
-*/
-
