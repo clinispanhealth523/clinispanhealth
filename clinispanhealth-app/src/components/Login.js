@@ -35,9 +35,9 @@ const Login = () => {
         localStorage.setItem('user', response.data.email)
     }
 
-  /*  if (user.loggedIn) {
-        return <div>{user.email} is loggged in</div>;
-      } */
+    if (user.loggedIn) {
+        return <div>{user.email} is loggged in, try out /manage-profile</div>;
+      } 
 
     return (
         <div>

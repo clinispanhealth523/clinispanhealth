@@ -33,7 +33,11 @@ app.post("/manage-profile", (req, res) => {
 
 app.post("/login", (req, res) => {
   console.log(req.body)
-  res.send(req.body)
+  res.send({
+    email: req.body.email,
+    pw: req.body.pw,
+    loggedIn: true
+  })
 });
 
 // Retrieves entry values from the Sign Up page in JSON format and creates a new patient in the database; COMPLETE
