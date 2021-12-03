@@ -50,19 +50,19 @@ const Login = () => {
        )
       }
 
-      if (loggedIn) {
+  /*    if (loggedIn == ) {
         localStorage.setItem('user', "")
        return(
      <div>
         <SignUpHeader/>
         <div className='mainSignUp'>
             <div className='forms2'>
-            <div><h2>Logging out...</h2></div>
+            <div><h2>Logging out, {user.first} {user.last}...</h2></div>
             </div>
         </div>
     </div>
        )
-      }
+      } */
 
     return (
         <div>
