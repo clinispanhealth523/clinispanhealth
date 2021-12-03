@@ -82,7 +82,7 @@ const SignUp = () => {
                         </label><br /><br />
                         <label> Create Password:
                             <input
-                                type="text"
+                                type="password"
                                 name="pw"
                                 value={inputs.pw || ""}
                                 onChange={handleChange}
@@ -90,7 +90,7 @@ const SignUp = () => {
                         </label><br /><br />
                         <label> Re-enter Password:
                             <input
-                                type="text"
+                                type="password"
                                 name="pw2"
                                 value={inputs.pw2 || ""}
                                 onChange={handleChange}

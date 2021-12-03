@@ -81,7 +81,7 @@ const Login = () => {
                         </label><br /><br />
                         <label> Create Password:
                             <input
-                                type="text"
+                                type="password"
                                 name="pw"
                                 value={user.pw || ""}
                                 onChange={handleChange}
