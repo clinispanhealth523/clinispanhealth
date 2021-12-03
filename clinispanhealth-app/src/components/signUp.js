@@ -2,8 +2,7 @@ import SignUpHeader from "./SignUpHeader"
 
 import { useState } from "react";
 import { signUp } from "../apis/signUpSubmit";
-import { getUser } from "../apis/api";
-
+import SignOutHeader from "./SignOutHeader";
 
 
 const SignUp = () => {
@@ -28,20 +27,19 @@ const SignUp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         signUp(inputs, window.location.origin);
+        window.location.href='/'
     }
 
-        const loggedIn = localStorage.getItem('user')
+        const loggedIn = localStorage.getItem('user').split(',')
         
-        if (loggedIn) {
-            const result = getUser(loggedIn).then(function(res) {
-                return res.data
-            })
+        if (loggedIn[0].length > 1) {
+
             return (
                 <div>
-                <SignUpHeader/>
+                <SignOutHeader/>
                 <div className='mainSignUp'>
                     <div className='forms2'>
-                    <div><h2>You're already logged in. The sign out button isn't implemented yet.</h2></div>
+                    <div><h2>An account is already logged in! Logout to sign up.</h2></div>
                     </div>
                 </div>
             </div>
@@ -54,7 +52,6 @@ const SignUp = () => {
             <div className="mainSignUp">
                 <div className='forms'>
                     <form onSubmit={handleSubmit}>
-                        <b><p className='label'>Joining is free and secure. What are you waiting for?</p></b>
                         <label> First Name:
                             <input
                                 type="text"

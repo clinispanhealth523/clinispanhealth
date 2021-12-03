@@ -88,7 +88,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="first"
                                     class="input"
-                                    value={user.first}
+                                    value={loggedIn[0]}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -99,7 +99,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="last"
                                     class="input"
-                                    value={user.last}
+                                    value={loggedIn[1]}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -137,7 +137,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="displayName"
                                     class="input"
-                                    value={user.displayName}
+                                    value={loggedIn[2]}
                                     onChange={handleChange}
                                 />
                             </label>

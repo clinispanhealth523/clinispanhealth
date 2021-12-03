@@ -3,8 +3,6 @@ import SignUpHeader from "./SignUpHeader";
 import { useState } from "react";
 import axios from 'axios';
 
-
-const loggedIn = localStorage.getItem('user')
 const Login = () => {
 
     // Under development code for setting login state
@@ -34,35 +32,10 @@ const Login = () => {
         setUser(response.data)
       //  alert(response.data.email)
         // store the user in localStorage
-        localStorage.setItem('user', response.data.first + "," + response.data.last + "," + response.data.email)
+        localStorage.setItem('user', response.data.first + ',' + response.data.last + ',' + response.data.email)
+        window.location.href='/home'
     }
 
-    if (user.id >= 0) {
-       return (
-        <div>
-        <SignUpHeader/>
-        <div className='mainSignUp'>
-            <div className='forms2'>
-            <div><h2>You've successfully logged in, {user.first} {user.last}!</h2></div>
-            </div>
-        </div>
-    </div>
-       )
-      }
-
-  /*    if (loggedIn == ) {
-        localStorage.setItem('user', "")
-       return(
-     <div>
-        <SignUpHeader/>
-        <div className='mainSignUp'>
-            <div className='forms2'>
-            <div><h2>Logging out, {user.first} {user.last}...</h2></div>
-            </div>
-        </div>
-    </div>
-       )
-      } */
 
     return (
         <div>
