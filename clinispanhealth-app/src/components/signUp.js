@@ -3,9 +3,11 @@ import SignUpHeader from "./SignUpHeader"
 import { useState } from "react";
 import { signUp } from "../apis/signUpSubmit";
 import SignOutHeader from "./SignOutHeader";
-
+import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
+
+    let history = useHistory();
     
     const [inputs, setInputs] = useState({
         first: "",
@@ -34,9 +36,9 @@ const SignUp = () => {
         window.localStorage.setItem('last', inputs.last);
         window.localStorage.setItem('phone', inputs.phone);
         window.localStorage.setItem('email', inputs.email);
-        
-        // redirect to HomePage
-        window.location.href = "/home";
+
+        // Redirect patient to Home Page
+        history.push("/home");
     }
 
     // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)
