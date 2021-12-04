@@ -85,8 +85,8 @@ const SignUp = () => {
                         <label> Create Password:
                             <input
                                 type="password"
-                                name="pw"
-                                value={inputs.pw || ""}
+                                name="password"
+                                value={inputs.password || ""}
                                 onChange={handleChange}
                             />
                         </label><br /><br />
@@ -119,7 +119,7 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 name="referral"
-                                value={inputs.referral || ""}
+                                value={inputs.referral_code || ""}
                                 onChange={handleChange}
                             />
                         </label><br /><br />

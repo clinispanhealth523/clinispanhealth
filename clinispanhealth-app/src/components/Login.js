@@ -1,58 +1,54 @@
 import SignUpButton from "./SignUpButton";
 import SignUpHeader from "./SignUpHeader";
 import { useState } from "react";
-import axios from 'axios';
+import { login } from "../apis/loginSubmit.js"
 import SignOutHeader from "./SignOutHeader";
 
 const Login = () => {
 
     // Under development code for setting login state
-
-
-    const [user, setUser] = useState({
-        id: -1,
+    const [inputs, setInputs] = useState({
         email: "",
-        pw: "",
+        password: "",
     });
 
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setUser(values => ({...values, [name]: value}));
+        setInputs(values => ({...values, [name]: value}));
     }
   
     const handleSubmit = async e => {
         e.preventDefault();
-        // send the username and password to the server
-
-        const response = await axios.get(
-            window.location.origin + `/user/` + user.email,
-            user
-        );
-        // set the state of the user
-        setUser(response.data)
-      //  alert(response.data.email)
-        // store the user in localStorage
-        window.localStorage.setItem('user', response.data.first + ',' + response.data.last + ',' + response.data.email)
+        // Send the username and password to the server
+        const loginData = login(inputs, window.location.origin);
+        // Alert that a login is successful
+        alert("Login Successful");
+        // Set the local storage to signify that the user is loggedIn
+        window.localStorage.setItem('loggedIn', true);
+        // Set other local storage information
+        window.localStorage.setItem('first', loginData.first);
+        window.localStorage.setItem('last', loginData.last);
     }
-    const loggedIn = window.localStorage.getItem('user').split(',')
 
-    if (loggedIn[1]) {
-        return (
-            <div>
-            <SignOutHeader/>
-            <div className='mainSignUp'>
-                <div className='forms2'>
-                        <b><p className='label'>Logged in as {loggedIn[0]} {loggedIn[1]}</p></b>
-                         
+    // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)
+    if (window.localStorage.hasOwnProperty('loggedIn')) {
+        if (window.localStorage.getItem('loggedIn')) {
+            return (
+                <div>
+                <SignOutHeader/>
+                <div className='mainSignUp'>
+                    <div className='forms2'>
+                            <b><p className='label'>Logged in as {window.localStorage.getItem('first')} {window.localStorage.getItem('last')}</p></b>
+                            
+                    </div>
                 </div>
             </div>
-        </div>
-        )
+            );
+        }
     }
       
-        
-    
+    // If the user is not logged in, return the login form
     return (
         <div>
             <SignUpHeader/>
@@ -64,7 +60,7 @@ const Login = () => {
                             <input
                                 type="text"
                                 name="email"
-                                value={user.email || ""}
+                                value={inputs.email || ""}
                                 onChange={handleChange}
                                 placeholder='e.g. abc123'
                             />
@@ -73,7 +69,7 @@ const Login = () => {
                             <input
                                 type="password"
                                 name="pw"
-                                value={user.pw || ""}
+                                value={inputs.password || ""}
                                 onChange={handleChange}
                             />
                         </label><br /><br />
@@ -85,4 +81,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

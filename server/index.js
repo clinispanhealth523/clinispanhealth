@@ -3,6 +3,7 @@ import path from 'path'
 import express from 'express';
 import bodyParser from 'body-parser';
 import { createPatient, getPatient } from './db.js';
+import { login, signUp } from './signUp.js';
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,25 +30,30 @@ app.post("/manage-profile", (req, res) => {
   console.log(req.body);
 });
 
-// Test function for login button submit
-
+// LOGIN ROUTE HANDLING
+// Request: A post request with an email and password in a JSON
+// Response: A JSON with all non-password-related data of the user loggedIn
+// Error: Sends an error message if the login was unsuccessful (ex: email doesn't exist, incorrect pw)
 app.post("/login", (req, res) => {
-  console.log(req.body)
-  res.send({
-    email: req.body.email,
-    pw: req.body.pw,
-  })
+  const loginInfo = login(req.body);
+  // Delete the password and salt from the login info
+  delete loginInfo.password;
+  delete loginInfo.salt;
+  // Send back the loginInfo
+  res.send(loginInfo);
 });
 
-// Retrieves entry values from the Sign Up page in JSON format and creates a new patient in the database; COMPLETE
+// SIGNUP ROUTE HANDLING
+// Request: A post request with various signUp information, including a desired password
+// Response: A JSON with all non-password-related data of the user that was signedUp
+// Error: Sends an error message if signUp was unsuccessful (ex: email already exists)
 app.post("/signUp", (req, res) => {
-     createPatient(req.body).catch(
-       function(err) {
-         throw err;
-       } 
-     ); 
-     console.log(req.body)
-    res.send("POST request for signup completed.");
+  const signUpInfo = signUp(req.body);
+  // Delete password and salt from the signUp info
+  delete signUpInfo.password;
+  delete signUpInfo.salt;
+  // Send back the signUpInfo
+  res.send(signUpInfo);
     
 });
 

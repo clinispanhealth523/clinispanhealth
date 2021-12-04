@@ -1,17 +1,17 @@
 // Import the database management functions
 import { createPatient, getPatient } from './db.js';
 // Standard Node js library for performing cyrptographic hashing
-import crypto from 'crytpo';
+import crypto from 'crypto';
 
 // SIGNUP
-// Input: An info dictionary provided by the client after submitting the signup form
-// Output: Returns true if signUp is successful
-// Error: Throws an error if signUp is not successful
+// Input: An info object provided by the client after submitting the signup form
+// Output: Returns back the information associated with the newly created patient
+// Error: Throws an error if signup is not successful (ex: email already exists)
 export async function signUp(info) {
     // Encrypt the signUp and create a patient from the data
     await createPatient(encryptSignUp(info));
-    // Return true to indicate successful operation
-    return true;
+    // Return the newly created patient's information
+    return getPatient(info.email);
 }
 
 
@@ -37,25 +37,26 @@ export function encryptSignUp(info) {
 
 
 // LOGIN
-// Inputs: An email and password
-// Output: Returns true if login is successful, otherwise throws an error
-export async function login(email, password) {
+// Inputs: An object with an email and password
+// Output: Returns an object with all user info if login is successful
+// Error: Throws an error if login is unsuccessful
+export async function login(info) {
     // Confirm that the email exists in the database
-    if (! emailExists(email)) {
+    if (! emailExists(info.email)) {
         throw "A user with that email does not exist";
     }
     // Retrieve the patient info from the database
-    const patient = await getPatient(email);
+    const patient = await getPatient(info.email);
     // Combine the provided pw with the salt from the db
-    const to_hash = patient.salt + password;
+    const to_hash = patient.salt + info.password;
     // Hash the combined value
     const new_hash = crypto.createHash('sha256').update(to_hash).digest('hex');
     // Throw an error if the newly hashed value doesn't match the stored pw hash
     if (new_hash !== patient.password) {
         throw "Incorrect password provided"
     }
-    // If values match, login is successful
-    return true;
+    // If values match, then return the patient information
+    return patient;
 }
 
 

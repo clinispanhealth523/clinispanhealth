@@ -29,7 +29,7 @@ describe('DB Schema Creation', () => {
     });
 });
 
-describe('Patient Functions', () => {
+describe('Patient Creation', () => {
 
     const patient = {
         email: "jdoe@gmail.com",
@@ -49,6 +49,17 @@ describe('Patient Functions', () => {
     it('Creates a new patient', async () => {
         expect(await createPatient(patient)).toBe("Success");
     });
+});
+
+describe('Patient Deletion', () => {
+    const patient = {
+        email: "jdoe@gmail.com",
+        password: "puppylover123",
+        first: "John",
+        last: "Doe",
+        zipcode: 27514,
+        phone: '19191234567',
+    } 
 
     it('Retrieves a patient by email', async () => {
         const result = await getPatient(patient.email);
@@ -56,7 +67,4 @@ describe('Patient Functions', () => {
             expect(result[key]).toBe(value);
         }
     });
-
 });
-
-
