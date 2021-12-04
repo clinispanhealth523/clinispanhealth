@@ -27,8 +27,10 @@ const Login = () => {
         // Set the local storage to signify that the user is loggedIn
         window.localStorage.setItem('loggedIn', true);
         // Set other local storage information
-        window.localStorage.setItem('first', loginData.first);
-        window.localStorage.setItem('last', loginData.last);
+        window.localStorage.setItem('email', inputs.email);
+
+        // redirect to HomePage
+        window.location.href = "/home";
     }
 
     // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)
@@ -39,7 +41,7 @@ const Login = () => {
                 <SignOutHeader/>
                 <div className='mainSignUp'>
                     <div className='forms2'>
-                            <b><p className='label'>Logged in as {window.localStorage.getItem('first')} {window.localStorage.getItem('last')}</p></b>
+                            <b><p className='label'>Logged in as {window.localStorage.getItem('email')} {window.localStorage.getItem('last')}</p></b>
                             
                     </div>
                 </div>
@@ -68,7 +70,7 @@ const Login = () => {
                         <label> Password:
                             <input
                                 type="password"
-                                name="pw"
+                                name="password"
                                 value={inputs.password || ""}
                                 onChange={handleChange}
                             />

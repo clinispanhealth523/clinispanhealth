@@ -26,12 +26,17 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const signUpData = signUp(inputs, window.location.origin);
+        signUp(inputs, window.location.origin);
         // Set the local storage to signify that the user is loggedIn
         window.localStorage.setItem('loggedIn', true);
         // Set other local storage information
-        window.localStorage.setItem('first', signUpData.first);
-        window.localStorage.setItem('last', signUpData.last);
+        window.localStorage.setItem('first', inputs.first);
+        window.localStorage.setItem('last', inputs.last);
+        window.localStorage.setItem('phone', inputs.phone);
+        window.localStorage.setItem('email', inputs.email);
+        
+        // redirect to HomePage
+        window.location.href = "/home";
     }
 
     // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)
@@ -118,7 +123,7 @@ const SignUp = () => {
                         <label> Referral Code:
                             <input
                                 type="text"
-                                name="referral"
+                                name="referral_code"
                                 value={inputs.referral_code || ""}
                                 onChange={handleChange}
                             />

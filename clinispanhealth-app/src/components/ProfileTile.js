@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from 'react'
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 const ProfileTile = () => {
 
     // Determine if the user is logged in or not.
@@ -21,8 +22,8 @@ const ProfileTile = () => {
         dob: "",
         location: "",
         displayName: "",
-        displayEmail: "",
-        phone: "",
+        displayEmail: loggedIn ? window.localStorage.getItem('email') : "",
+        phone: loggedIn ? window.localStorage.getItem('phone') : "",
         gender: "",
         ethnicity: "",
         meds: "",
@@ -92,7 +93,8 @@ const ProfileTile = () => {
                                     type="text"
                                     name="first"
                                     class="input"
-                                    value={loggedIn[0]}
+                                    // value={loggedIn[0]}
+                                    value={user.first}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -103,7 +105,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="last"
                                     class="input"
-                                    value={loggedIn[1]}
+                                    value={user.last}
                                     onChange={handleChange}
                                 />
                             </label>

@@ -9,7 +9,11 @@ describe('Frontend tests', function () {
         cy.visit('localhost:3000')
       })
     it('Visits all pages from the navbar', function () {
-
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            // returning false here prevents Cypress from
+            // failing the test
+            return false
+        })
         // Visit Home page
         cy.get('.cshHeader').click()
         cy.url().should('include', '/home')
@@ -65,12 +69,16 @@ describe('Frontend tests', function () {
         cy.get('input[type=text').eq(0).type('joeschmoe27@yahoo.com')
         .should('have.value', 'joeschmoe27@yahoo.com')
 
-        cy.get('input[type=text').eq(1).type('password123')
+        cy.get('input[type=password').type('password123')
         .should('have.value', 'password123')
     })
 
     it('Populates Manage Profile fields and checks value', function () {
-
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            // returning false here prevents Cypress from
+            // failing the test
+            return false
+        })
         cy.get('.cshHeader').click()
         cy.contains('Manage Profile').click()
 
@@ -129,5 +137,15 @@ describe('Frontend tests', function () {
 
         cy.get('#FbBtn').click()
         
+    })
+
+    it ('Visits FAQ page and clicks on dropdowns', function () {
+        
+        cy.get('.cshHeader').click()
+        cy.contains('FAQ').click()
+
+        // open and close dropdown
+        cy.get('#1').click()
+        cy.get('#14').click()
     })
 })
