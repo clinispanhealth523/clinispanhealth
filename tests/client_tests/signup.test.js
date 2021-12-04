@@ -21,7 +21,7 @@ describe('Overall Signup Tests', () => {
             } catch (error) {
                 return error;
             }
-        })(inputs)).toBe(true);
+        })(inputs)).toBe(inputs);
     });
 });
 
@@ -82,7 +82,7 @@ describe('First and Last Name Tests', () => {
             } catch (error) {
                 return error;
             }
-        })(inputs)).toBe(true);
+        })(inputs)).toBe(inputs);
     });
 
 });
