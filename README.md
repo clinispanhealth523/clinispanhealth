@@ -35,7 +35,8 @@ Backend testing:
 2. Run "npm run build" to build the react app locally.
 3. Run "npm start" to start up a local server.
 4. Open a second terminal and navigate to `/clinispanhealth` again.
-5. Run "jest --coverage" to get a test coverage report.
+5. Run "jest --coverage --runInBand" to get a test coverage report.  
+(Testing requires "runInBand" because there is a database connection limit, that prevents database-related tests from being able to run concurrently, based on the current ClearDB plan being used for the database)
 
 # Deployment
 
