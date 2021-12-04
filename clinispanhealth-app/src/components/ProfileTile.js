@@ -158,7 +158,7 @@ const ProfileTile = () => {
                             </label>
                         </div>
                         <div className='inputContainer'>
-                            <label className="label"> Display E-mail
+                            <label className="label"> Username
                                 <input
                                     type="text"
                                     name="displayEmail"
