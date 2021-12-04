@@ -1,22 +1,26 @@
 import { useState } from "react";
-import React, { Component } from 'react'
-import { getUser } from '../apis/api.js'
-const loggedIn = window.localStorage.getItem('user').split(",")
+import React from 'react'
 const ProfileTile = () => {
 
-    // Returns the user if the user is logged in S
-   const userData = getUser(loggedIn)
-        .then(function(res) {
-         //   alert(res.data)
-            return res.data
-        })
-    
+    // Determine if the user is logged in or not.
+    let loggedIn = '';
+    if (window.localStorage.hasOwnProperty('loggedIn')) {
+        if (window.localStorage.getItem('loggedIn')) {
+            loggedIn = true;
+        } else {
+            loggedIn = false;
+        }
+    } else {
+        loggedIn = false;
+    }
+
+    // Fill out preexisting user data
    const [user, setUser] = useState({
-        first: loggedIn[0],
-        last: loggedIn[1],
+        first: loggedIn ? window.localStorage.getItem('first') : "",
+        last: loggedIn ? window.localStorage.getItem('last') : "",
         dob: "",
         location: "",
-        displayName: loggedIn[2],
+        displayName: "",
         displayEmail: "",
         phone: "",
         gender: "",

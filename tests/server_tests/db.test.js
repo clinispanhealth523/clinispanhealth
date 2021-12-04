@@ -15,11 +15,6 @@ describe('DB Setup', () => {
     it('Connects to DB', async () => {
         expect(await testCon()).toBe("Success");
     });
-
-    it('Creates the Schema', async () => {
-        expect(await createSchema()).toBe("Success");
-    });
-
 });
 
 describe('DB Schema Deletion', () => {

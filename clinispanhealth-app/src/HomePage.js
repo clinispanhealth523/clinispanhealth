@@ -8,9 +8,6 @@ import { Link } from "react-router-dom";
 
 import './HomePage.css';
 
-// This user retrieves the first name as index 0, the last name as index 1 and the email as index 2
-const user = window.localStorage.getItem('user').split(',')
-
 function HomePage() {
   return (
     <div>
@@ -41,7 +38,7 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div id="header">
-        <h1>Welcome back, {user[0]} {user[1]}!</h1>
+        <h1>Welcome back!</h1>
       </div>
       <p id="subtitle">This is your user dashboard. Here, you can choose to browse clinical studies or manage your profile.</p>
       <div id="tiles">
