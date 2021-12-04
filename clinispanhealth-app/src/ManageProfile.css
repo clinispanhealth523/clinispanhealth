@@ -50,6 +50,8 @@
 }
 
 .inputContainer {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     width: 45%;
 }

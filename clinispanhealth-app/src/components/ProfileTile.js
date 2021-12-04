@@ -175,26 +175,40 @@ const ProfileTile = () => {
                 <div id="fieldsContainer2">
                     <div className="fieldsRow">
                          <div className='inputContainer'>
-                            <label className="label"> Gender
-                                <input
+                            <label className="label"> Gender</label>
+                                <select id="gender" name="cars">
+                                    <option value="nothing"></option>
+                                    <option value="volvo">Male</option>
+                                    <option value="saab">Female</option>
+                                    <option value="fiat">Other</option>
+                                </select>
+                                {/* <input
                                     type="text"
                                     name="gender"
                                     class="input"
                                     value={user.gender || ""}
                                     onChange={handleChange}
-                                />
-                            </label>
+                                /> */}
                         </div>
                         <div className='inputContainer'>
-                            <label className="label"> Ethnicity
-                                <input
+                            <label className="label"> Race/Ethnicity</label>
+                                <select id="ethnicity" name="cars">
+                                    <option value="nothing"></option>
+                                    <option value="volvo">Alaskan Native / American Indian / Indigenous American / Native American</option>
+                                    <option value="saab">Black or African American</option>
+                                    <option value="fiat">Asian (Not Hispanic or Latino)</option>
+                                    <option value="fiat">Hispanic or Latino</option>
+                                    <option value="fiat">Native Hawaiian or other Pacific Islander</option>
+                                    <option value="fiat">White</option>
+                                    <option value="fiat">More than one ethnicity</option>
+                                </select>
+                                {/* <input
                                     type="text"
                                     name="ethnicity"
                                     class="input"
                                     value={user.ethnicity || ""}
                                     onChange={handleChange}
-                                />
-                            </label>
+                                /> */}
                         </div>
                     </div>
                 </div>
