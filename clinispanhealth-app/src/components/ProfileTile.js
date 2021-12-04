@@ -19,9 +19,9 @@ const ProfileTile = () => {
    const [user, setUser] = useState({
         first: loggedIn ? window.localStorage.getItem('first') : "",
         last: loggedIn ? window.localStorage.getItem('last') : "",
-        dob: "",
-        location: "",
-        displayName: "",
+        dob: loggedIn && window.localStorage.hasOwnProperty('dob') ? window.localStorage.getItem('dob') : "",
+        location: loggedIn && window.localStorage.hasOwnProperty('location') ? window.localStorage.getItem('location') : "",
+        displayName: loggedIn && window.localStorage.hasOwnProperty('displayName') ? window.localStorage.getItem('displayName') : "",
         displayEmail: loggedIn ? window.localStorage.getItem('email') : "",
         phone: loggedIn ? window.localStorage.getItem('phone') : "",
         gender: "",
@@ -29,6 +29,16 @@ const ProfileTile = () => {
         meds: "",
         check: "" 
    })
+
+   function saveChanges() {
+       if (loggedIn) {
+            window.localStorage.setItem('dob', user.dob);
+            window.localStorage.setItem('location', user.location);
+            window.localStorage.setItem('displayName', user.displayName);
+            window.localStorage.setItem('gender', user.gender);
+            window.localStorage.setItem('ethnicity', user.ethnicity);
+       }
+   }
 
   
 
@@ -93,7 +103,6 @@ const ProfileTile = () => {
                                     type="text"
                                     name="first"
                                     class="input"
-                                    // value={loggedIn[0]}
                                     value={user.first}
                                     onChange={handleChange}
                                 />
@@ -119,7 +128,7 @@ const ProfileTile = () => {
                                     name="dob"
                                     class="input"
                                     placeholder="mm/dd/yyyy"
-                                    value={user.dob || ""}
+                                    value={user.dob}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -130,7 +139,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="location"
                                     class="input"
-                                    value={user.location || ""}
+                                    value={user.location}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -143,7 +152,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="displayName"
                                     class="input"
-                                    value={loggedIn[2]}
+                                    value={user.displayName}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -167,7 +176,7 @@ const ProfileTile = () => {
                                     type="text"
                                     name="phone"
                                     class="input"
-                                    value={user.phone || ""}
+                                    value={user.phone}
                                     onChange={handleChange}
                                 />
                             </label>
@@ -184,37 +193,23 @@ const ProfileTile = () => {
                             <label className="label"> Gender</label>
                                 <select id="gender" name="cars">
                                     <option value="nothing"></option>
-                                    <option value="volvo">Male</option>
-                                    <option value="saab">Female</option>
-                                    <option value="fiat">Other</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
                                 </select>
-                                {/* <input
-                                    type="text"
-                                    name="gender"
-                                    class="input"
-                                    value={user.gender || ""}
-                                    onChange={handleChange}
-                                /> */}
                         </div>
                         <div className='inputContainer'>
                             <label className="label"> Race/Ethnicity</label>
                                 <select id="ethnicity" name="cars">
                                     <option value="nothing"></option>
-                                    <option value="volvo">Alaskan Native / American Indian / Indigenous American / Native American</option>
-                                    <option value="saab">Black or African American</option>
-                                    <option value="fiat">Asian (Not Hispanic or Latino)</option>
-                                    <option value="fiat">Hispanic or Latino</option>
-                                    <option value="fiat">Native Hawaiian or other Pacific Islander</option>
-                                    <option value="fiat">White</option>
-                                    <option value="fiat">More than one ethnicity</option>
+                                    <option value="Alaskan">Alaskan Native / American Indian / Indigenous American / Native American</option>
+                                    <option value="Black">Black or African American</option>
+                                    <option value="Asian">Asian (Not Hispanic or Latino)</option>
+                                    <option value="Hispanic">Hispanic or Latino</option>
+                                    <option value="Hawaiian">Native Hawaiian or other Pacific Islander</option>
+                                    <option value="White">White</option>
+                                    <option value="More">More than one ethnicity</option>
                                 </select>
-                                {/* <input
-                                    type="text"
-                                    name="ethnicity"
-                                    class="input"
-                                    value={user.ethnicity || ""}
-                                    onChange={handleChange}
-                                /> */}
                         </div>
                     </div>
                 </div>
@@ -336,7 +331,7 @@ const ProfileTile = () => {
                 </div>
             </div>
             <div id="saveBtnContainer">
-                <button id="saveBtn">Save changes</button>
+                <button id="saveBtn" onClick={saveChanges}>Save changes</button>
             </div>
         </div>
     );
