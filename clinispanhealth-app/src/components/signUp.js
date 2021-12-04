@@ -26,14 +26,17 @@ const SignUp = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signUp(inputs, window.location.origin);
-
+        const signUpData = signUp(inputs, window.location.origin);
+        // Set the local storage to signify that the user is loggedIn
+        window.localStorage.setItem('loggedIn', true);
+        // Set other local storage information
+        window.localStorage.setItem('first', signUpData.first);
+        window.localStorage.setItem('last', signUpData.last);
     }
 
-        const loggedIn = window.localStorage.getItem('user').split(',')
-        
-        if (loggedIn[1]) {
-
+    // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)
+    if (window.localStorage.hasOwnProperty('loggedIn')) {
+        if (window.localStorage.getItem('loggedIn')) {
             return (
                 <div>
                 <SignOutHeader/>
@@ -45,7 +48,9 @@ const SignUp = () => {
             </div>
             )
         }
+    }
     
+    // If the user is not logged in, return the signUp form
     return (
         <div>
             <SignUpHeader/>

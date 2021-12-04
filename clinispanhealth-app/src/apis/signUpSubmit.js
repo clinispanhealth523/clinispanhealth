@@ -18,8 +18,8 @@ export async function signUp(inputs, host) {
     // INSERT CHECKING HERE TO SEE IF INPUTS.PASSWORD AND INPUTS.PW2 MATCH
 
 
-// send the data in JSON format to the server
-    const result = await axios({
+// Send the data in JSON format to the server
+    await axios({
         method: 'POST',
         url: `${host}/signUp`,
         responseType: JSON, 
@@ -36,8 +36,6 @@ export async function signUp(inputs, host) {
         console.log(err);
     });
 
-
-
    /* if (response.status !== 200) {
         const error = response.statusText
     }*/
@@ -48,10 +46,10 @@ export async function signUp(inputs, host) {
         url: `${host}/api`,
         responseType: 'json'
     });
-
-    console.log(result.data);
     */
-    return true;
+
+    // Return the submitted inputs if the operation is successful
+    return inputs;
 }
 
 // Test the first and last names
