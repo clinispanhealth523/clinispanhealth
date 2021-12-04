@@ -29,16 +29,15 @@ const SignUp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         signUp(inputs, window.location.origin);
-        // Set the local storage to signify that the user is loggedIn
-        window.localStorage.setItem('loggedIn', true);
+      
         // Set other local storage information
         window.localStorage.setItem('first', inputs.first);
         window.localStorage.setItem('last', inputs.last);
         window.localStorage.setItem('phone', inputs.phone);
         window.localStorage.setItem('email', inputs.email);
 
-        // Redirect patient to Home Page
-        history.push("/home");
+        // Redirect patient to Login page so patient can sign in
+        history.push("/login");
     }
 
     // Return the signout header if the user is logged in. (has a defined localStorage loggedIn property equal to true)

@@ -18,8 +18,12 @@ const SignOutHeader = () => {
                 </Link>
                 <button className='signUpButton' onClick={
                     function() { 
-                        localStorage.setItem('loggedIn', 'false')
-                        window.location.href= window.location.origin + '/'
+                        window.localStorage.removeItem('loggedIn');
+                        window.localStorage.removeItem('first');
+                        window.localStorage.removeItem('last');
+                        window.localStorage.removeItem('phone');
+                        window.localStorage.removeItem('email');
+                        window.location.href = window.location.origin + '/'
                     }
                 }>Logout</button>
                 
