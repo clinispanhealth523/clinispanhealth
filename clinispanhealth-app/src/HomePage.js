@@ -35,10 +35,14 @@ function ContactBtn() {
 }
 
 function Dashboard() {
+
+  let loggedIn = window.localStorage.hasOwnProperty('loggedIn') ? window.localStorage.getItem('loggedIn') : false;
+  let content = loggedIn ? `Welcome back, ${window.localStorage.getItem('first')}!` : "Welcome back!";
+
   return (
     <div className="dashboard">
       <div id="header">
-        <h1>Welcome back!</h1>
+        <h1>{content}</h1>
       </div>
       <p id="subtitle">This is your user dashboard. Here, you can choose to browse clinical studies or manage your profile.</p>
       <div id="tiles">
