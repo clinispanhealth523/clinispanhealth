@@ -45,20 +45,31 @@ describe('Frontend tests', function () {
 
     it('Populates sign up fields and checks value', function () {
 
-        cy.get('input[type=text').eq(0).type('joeschmoe27@yahoo.com')
-        .should('have.value', 'joeschmoe27@yahoo.com')
+        cy.get('input[type=text').eq(0).type('Dezbee')
+        .should('have.value', 'Dezbee')
 
-        cy.get('input[type=text').eq(1).type('password123')
-        .should('have.value', 'password123')
+        cy.get('input[type=text').eq(1).type('McDaniel')
+        .should('have.value', 'McDaniel')
 
-        cy.get('input[type=text').eq(2).type('password123')
-        .should('have.value', 'password123')
+        cy.get('input[type=text').eq(2).type('dezbeem123')
+        .should('have.value', 'dezbeem123')
+
+        cy.get('input[type=password').eq(0).type('password')
+        .should('have.value', 'password')
+
+        cy.get('input[type=password').eq(1).type('password')
+        .should('have.value', 'password')
 
         cy.get('input[type=text').eq(3).type('27516')
         .should('have.value', '27516')
 
-        cy.get('input[type=text').eq(4).type('1-919-874-3001')
-        .should('have.value', '1-919-874-3001')
+        cy.get('input[type=text').eq(4).type('1-704-532-9601')
+        .should('have.value', '1-704-532-9601')
+
+        cy.get('input[type=text').eq(5).type('562035')
+        .should('have.value', '562035')
+
+        cy.get('input[type=submit').eq(0).click()
 
     })
 
@@ -66,11 +77,11 @@ describe('Frontend tests', function () {
 
         cy.contains('Login').click()
 
-        cy.get('input[type=text').eq(0).type('joeschmoe27@yahoo.com')
-        .should('have.value', 'joeschmoe27@yahoo.com')
+        cy.get('input[type=text').eq(0).type('dezbeem123')
+        .should('have.value', 'dezbeem123')
 
-        cy.get('input[type=password').type('password123')
-        .should('have.value', 'password123')
+        cy.get('input[type=password').type('password')
+        .should('have.value', 'password')
     })
 
     it('Populates Manage Profile fields and checks value', function () {
@@ -82,31 +93,32 @@ describe('Frontend tests', function () {
         cy.get('.cshHeader').click()
         cy.contains('Manage Profile').click()
 
-        cy.get('input[type=text').eq(0).type('Joe')
-        .should('have.value', 'Joe')
+        cy.get('input[type=text').eq(0).type('Dezbee')
+        .should('have.value', 'Dezbee')
 
-        cy.get('input[type=text').eq(1).type('Schmo')
-        .should('have.value', 'Schmo')
+        cy.get('input[type=text').eq(1).type('McDaniel')
+        .should('have.value', 'McDaniel')
 
-        cy.get('input[type=text').eq(2).type('03/27/1965')
-        .should('have.value', '03/27/1965')
+        cy.get('input[type=text').eq(2).type('03/27/1990')
+        .should('have.value', '03/27/1990')
 
         cy.get('input[type=text').eq(3).type('Chapel Hill')
         .should('have.value', 'Chapel Hill')
 
-        cy.get('input[type=text').eq(4).type('Joe Schmo')
-        .should('have.value', 'Joe Schmo')
+        cy.get('input[type=text').eq(4).type('Dezbee McDaniel')
+        .should('have.value', 'Dezbee McDaniel')
 
-        cy.get('input[type=text').eq(5).type('joeschmoe27@yahoo.com')
-        .should('have.value', 'joeschmoe27@yahoo.com')
+        cy.get('input[type=text').eq(5).type('dezbeem123')
+        .should('have.value', 'dezbeem123')
 
-        cy.get('input[type=text').eq(6).type('1-919-874-3001')
-        .should('have.value', '1-919-874-3001')
+        cy.get('input[type=text').eq(6).type('1-704-532-9601')
+        .should('have.value', '1-704-532-9601')
 
-        cy.get('input[type=text').eq(8).type('Male')
-        .should('have.value', 'Male')
+        cy.get('select[id=gender]').select('Male').should('have.value', 'Male')
 
-        cy.get('#medsTextArea').type('Zoloft, Hygroton, Adderall')
+        cy.get('select[id=ethnicity]').select('Black or African American').should('have.value', 'Black')
+
+        cy.get('input[type=text').eq(7).type('Zoloft, Hygroton, Adderall')
         .should('have.value', 'Zoloft, Hygroton, Adderall')
 
         cy.get('input[type=checkbox').eq(7).check()
@@ -117,6 +129,8 @@ describe('Frontend tests', function () {
 
         cy.get('input[type=checkbox').eq(14).check()
         .should('be.checked')
+
+        cy.get('button[id=saveBtn]').click()
 
     })
 
@@ -147,5 +161,31 @@ describe('Frontend tests', function () {
         // open and close dropdown
         cy.get('#1').click()
         cy.get('#14').click()
+    })
+
+    it ('Enters blank fields for first and last name on Sign Up page', function () {
+
+        // should throw an error
+        cy.get('input[type=submit').eq(0).click()
+    })
+
+    it ('Includes numbers and symbols in name fields on Sign Up page', function () {
+
+        // should throw an error
+        cy.get('input[type=text').eq(0).type('123Dez56')
+
+        cy.get('input[type=text').eq(1).type('#D%*')
+
+        cy.get('input[type=submit').eq(0).click()
+    })
+
+    it ('Signs up with blank email', function () {
+
+        // should throw an error
+        cy.get('input[type=text').eq(0).type('Dezbee')
+
+        cy.get('input[type=text').eq(1).type('McDaniel')
+
+        cy.get('input[type=submit').eq(0).click()
     })
 })

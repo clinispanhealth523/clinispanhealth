@@ -29,6 +29,7 @@ Frontend testing:
 3. Open a second terminal in VS Code and again navigate to `\clinispanhealth-app`
 4. Run the command "npx cypress open" to open the Cypress Test Runner
 5. Click on "tests_spec.js" to run the frontend tests in your browser
+6. Navigate to the `\clinispanhealth-app\coverage\lcov-report` folder and open the `index.html` file in your default browser to view the full test coverage report.
 
 Backend testing:
 1. Navigate to the `/clinispanhealth` folder within the terminal.
