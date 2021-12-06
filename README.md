@@ -44,7 +44,7 @@ Backend testing:
 Our app is deployed through Heroku. Our account login information is as follows:
 
 * Username: clinispanhealth523@gmail.com
-* Password: #COMP523_unc
+* Password: ******
 
 We have also set up automatic deploys from the main branch of our GitHub repository to our Heroku app.
 
