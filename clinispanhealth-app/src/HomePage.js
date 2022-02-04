@@ -36,8 +36,7 @@ function ContactBtn() {
 
 function Dashboard() {
 
-  let loggedIn = window.localStorage.hasOwnProperty('loggedIn') ? window.localStorage.getItem('loggedIn') : false;
-  let content = loggedIn ? `Welcome back, ${window.localStorage.getItem('first')}!` : "Welcome back!";
+  let content = window.localStorage.getItem('loggedIn') ? `Welcome back, ${window.localStorage.getItem('first')}!` : "Welcome back!";
 
   return (
     <div className="dashboard">

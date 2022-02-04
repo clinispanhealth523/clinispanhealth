@@ -2,7 +2,7 @@
 import path from 'path'
 import express from 'express';
 import bodyParser from 'body-parser';
-import { createPatient, getPatient } from './db.js';
+import { createPatient, getPatient, updatePatient } from './db.js';
 import { login, signUp } from './signUp.js';
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,6 +28,20 @@ app.get('*', (req, res) => {
 app.post("/manage-profile", (req, res) => {
   console.log("Submitting to manage profile...");
   console.log(req.body);
+  console.log(req.body.email);
+
+  // Edits the current patient based on the patient's username; it is accessed by the 'email' field
+  updatePatient(req.body).then(function() {
+    getPatient(req.body.email).then(function(ans) {
+      delete ans.password;
+      delete ans.salt;
+      console.log(ans);
+      res.send(ans);
+    })
+  });
+
+
+
 });
 
 // LOGIN ROUTE HANDLING
@@ -35,12 +49,23 @@ app.post("/manage-profile", (req, res) => {
 // Response: A JSON with all non-password-related data of the user loggedIn
 // Error: Sends an error message if the login was unsuccessful (ex: email doesn't exist, incorrect pw)
 app.post("/login", (req, res) => {
-  const loginInfo = login(req.body);
-  // Delete the password and salt from the login info
-  delete loginInfo.password;
-  delete loginInfo.salt;
-  // Send back the loginInfo
-  res.send(loginInfo);
+  login(req.body).then(function(ans) {
+    delete ans.password;
+    delete ans.salt;
+    console.log(ans)
+    res.send({
+      'email': ans.email,
+      'first': ans.first,
+      'last': ans.last,
+      'zipcode': ans.zipcode,
+      'gender': ans.gender,
+      'dob': ans.dob,
+      'nickname': ans.nickname,
+      'display_email': ans.display_email,
+      'phone': ans.phone
+    })
+  })
+
 });
 
 // SIGNUP ROUTE HANDLING

@@ -24,14 +24,12 @@ const Login = () => {
     const handleSubmit = async e => {
         e.preventDefault();
         // Send the username and password to the server
-        const loginData = login(inputs, window.location.origin);
-        // Alert that a login is successful
-        alert("Login Successful");
-        // Set the local storage to signify that the user is loggedIn
-        window.localStorage.setItem('loggedIn', true);
-        // Set other local storage information
-        window.localStorage.setItem('email', inputs.email);
+    login(inputs, window.location.origin);
 
+    
+        // Alert that a login is successful
+        alert("Login Successful.");
+      
         // Redirect patient to Home Page
         history.push("/home");
     }

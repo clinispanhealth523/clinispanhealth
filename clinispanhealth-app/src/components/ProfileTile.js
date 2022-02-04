@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from 'react'
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { updateUser } from "../apis/updateUser";
 const ProfileTile = () => {
 
     // Determine if the user is logged in or not.
@@ -16,28 +17,30 @@ const ProfileTile = () => {
     }
 
     // Fill out preexisting user data
+    // Username is the field patients use to log in; on the Manage Profile page, people can add an email to their account
+    // and that will be accessed in the DB by the 'display_email' field
    const [user, setUser] = useState({
         first: loggedIn ? window.localStorage.getItem('first') : "",
         last: loggedIn ? window.localStorage.getItem('last') : "",
-        dob: loggedIn && window.localStorage.hasOwnProperty('dob') ? window.localStorage.getItem('dob') : "",
-        location: loggedIn && window.localStorage.hasOwnProperty('location') ? window.localStorage.getItem('location') : "",
-        displayName: loggedIn && window.localStorage.hasOwnProperty('displayName') ? window.localStorage.getItem('displayName') : "",
-        displayEmail: loggedIn ? window.localStorage.getItem('email') : "",
+        dob: loggedIn ?  window.localStorage.getItem('dob') : "",
+        location: loggedIn ? window.localStorage.getItem('zipcode') : "",
+        displayName: loggedIn ? window.localStorage.getItem('nickname') : "",
+        displayEmail: loggedIn ? window.localStorage.getItem('display_email') : "",
         phone: loggedIn ? window.localStorage.getItem('phone') : "",
-        gender: "",
+        gender: loggedIn ? window.localStorage.getItem('gender') : "",
         ethnicity: "",
         meds: "",
         check: "" 
    })
 
    function saveChanges() {
+       // If the user is logged in, submits the data to the DB and displays the changes in the profile
        if (loggedIn) {
-            window.localStorage.setItem('dob', user.dob);
-            window.localStorage.setItem('location', user.location);
-            window.localStorage.setItem('displayName', user.displayName);
-            window.localStorage.setItem('gender', user.gender);
-            window.localStorage.setItem('ethnicity', user.ethnicity);
+        updateUser(user, window.location.origin);
+        alert("Changes saved successfully.");
        }
+    
+
    }
 
   
@@ -158,7 +161,7 @@ const ProfileTile = () => {
                             </label>
                         </div>
                         <div className='inputContainer'>
-                            <label className="label"> Username
+                            <label className="label"> Email
                                 <input
                                     type="text"
                                     name="displayEmail"

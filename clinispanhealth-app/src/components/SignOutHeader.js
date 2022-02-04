@@ -23,6 +23,11 @@ const SignOutHeader = () => {
                         window.localStorage.removeItem('last');
                         window.localStorage.removeItem('phone');
                         window.localStorage.removeItem('email');
+                        window.localStorage.removeItem('dob');
+                        window.localStorage.removeItem('zipcode');
+                        window.localStorage.removeItem('gender');
+                        window.localStorage.removeItem('nickname');
+                        window.localStorage.removeItem('display_email');
                         window.location.href = window.location.origin + '/'
                     }
                 }>Logout</button>

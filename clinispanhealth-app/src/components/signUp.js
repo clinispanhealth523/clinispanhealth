@@ -29,12 +29,6 @@ const SignUp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         signUp(inputs, window.location.origin);
-      
-        // Set other local storage information
-        window.localStorage.setItem('first', inputs.first);
-        window.localStorage.setItem('last', inputs.last);
-        window.localStorage.setItem('phone', inputs.phone);
-        window.localStorage.setItem('email', inputs.email);
 
         // Redirect patient to Login page so patient can sign in
         history.push("/login");
@@ -48,7 +42,10 @@ const SignUp = () => {
                 <SignOutHeader/>
                 <div className='mainSignUp'>
                     <div className='forms2'>
-                    <div><h2>An account is already logged in! Logout to sign up.</h2></div>
+                    <div><h2>{window.localStorage.first} {window.localStorage.last} is already logged in.
+                    
+                    Logout to sign up.
+                    </h2></div>
                     </div>
                 </div>
             </div>

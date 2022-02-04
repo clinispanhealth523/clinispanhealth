@@ -139,12 +139,24 @@ export async function getPatient(email) {
     await conn.end();
     return result[0];
 }
+export async function updatePatient(user) {
+    const conn = await createCon();
+    await conn.execute(`UPDATE Patient
+   SET 
+    first = '${user.first}',
+    last = '${user.last}',
+    dob = '${user.dob}',
+    zipcode = '${user.location}',
+    nickname = '${user.displayName}',
+    display_email = '${user.displayEmail}',
+    phone = '${user.phone}',
+    gender = '${user.gender}'
 
-export async function getPatientById(id) {
-    const c = await createCon();
-    const [result, fields] = await c.execute(`SELECT * FROM Patient WHERE id = '${id}'`).catch(err => {
+    WHERE email = '${user.email}'`
+    ).catch(err => {
         return err;
-    });
-    await c.end();
-    return result[0];
+    })
+
+    await conn.end();
+    return;
 }

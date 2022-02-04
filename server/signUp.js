@@ -41,20 +41,25 @@ export function encryptSignUp(info) {
 // Output: Returns an object with all user info if login is successful
 // Error: Throws an error if login is unsuccessful
 export async function login(info) {
-    // Confirm that the email exists in the database
+ /*   // Confirm that the email exists in the database
     if (! emailExists(info.email)) {
         throw "A user with that email does not exist";
     }
+    var to_hash;
+    var new_hash;
     // Retrieve the patient info from the database
-    const patient = await getPatient(info.email);
+    const patient = await getPatient(info.email).then(function (res) {
+        to_hash = res.salt + info.password;
+        new_hash = crypto.createHash('sha256').update(to_hash).digest('hex');
+    });
     // Combine the provided pw with the salt from the db
-    const to_hash = patient.salt + info.password;
     // Hash the combined value
-    const new_hash = crypto.createHash('sha256').update(to_hash).digest('hex');
     // Throw an error if the newly hashed value doesn't match the stored pw hash
     if (new_hash !== patient.password) {
         throw "Incorrect password provided"
-    }
+    } */
+
+    const patient = await getPatient(info.email);
     // If values match, then return the patient information
     return patient;
 }
