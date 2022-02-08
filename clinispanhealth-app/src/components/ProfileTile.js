@@ -36,7 +36,7 @@ const ProfileTile = () => {
    function saveChanges() {
        // If the user is logged in, submits the data to the DB and displays the changes in the profile
        if (loggedIn) {
-        updateUser(user, window.location.origin);
+        updateUser(user, checkboxes, window.location.origin);
         alert("Changes saved successfully.");
        }
     
@@ -86,6 +86,7 @@ const ProfileTile = () => {
         const name = event.target.name;
         const value = event.target.checked;
         setCheckboxes(values => ({...values, [name]: !value}));
+
     }
 
     const handleSubmit = (event) => {
@@ -194,7 +195,9 @@ const ProfileTile = () => {
                     <div className="fieldsRow">
                          <div className='inputContainer'>
                             <label className="label"> Gender</label>
-                                <select id="gender" name="cars">
+                                <select id="gender" name="gender"
+                                value={user.gender}
+                                onChange={handleChange}>
                                     <option value="nothing"></option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -203,7 +206,9 @@ const ProfileTile = () => {
                         </div>
                         <div className='inputContainer'>
                             <label className="label"> Race/Ethnicity</label>
-                                <select id="ethnicity" name="cars">
+                                <select id="ethnicity" name="ethnicity"
+                                value={user.ethnicity}
+                                onChange={handleChange}>
                                     <option value="nothing"></option>
                                     <option value="Alaskan">Alaskan Native / American Indian / Indigenous American / Native American</option>
                                     <option value="Black">Black or African American</option>
@@ -219,7 +224,7 @@ const ProfileTile = () => {
                 <div className="medsContainer">
                     <p className="meds">Medications</p>
                     <div className="line"></div>
-                    <p className="listMeds">Please list any medications you are on</p>
+                    <p className="listMeds">Please list any medications you are on.</p>
                     <div id="textArea">
                             <input
                                 id="medsTextArea"

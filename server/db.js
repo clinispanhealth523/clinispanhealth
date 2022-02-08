@@ -139,6 +139,7 @@ export async function getPatient(email) {
     await conn.end();
     return result[0];
 }
+
 export async function updatePatient(user) {
     const conn = await createCon();
     await conn.execute(`UPDATE Patient
@@ -150,7 +151,8 @@ export async function updatePatient(user) {
     nickname = '${user.displayName}',
     display_email = '${user.displayEmail}',
     phone = '${user.phone}',
-    gender = '${user.gender}'
+    gender = '${user.gender}',
+    ethnicity = '${user.ethnicity}'
 
     WHERE email = '${user.email}'`
     ).catch(err => {
@@ -159,4 +161,33 @@ export async function updatePatient(user) {
 
     await conn.end();
     return;
+}
+
+/*export async function createEthnicity(ethnicity) {
+    const conn = await createCon();
+    await conn.execute(
+        `INSERT INTO Ethnicity (name) VALUES (${ethnicity})`
+    );
+    await conn.end();
+    return "Success";
+} */
+
+export async function createCondition(conditions) {
+    const [conds, values] = dictToString(conditions);
+    const conn = await createCon();
+    await conn.execute(
+        `INSERT INTO StudyCondition (name) VALUES ('High Cholesterol')`
+    );
+   /* highCholesterol,atheroclerosis,sleepApnea, asthma, diabetes, depression, constipation,prostate,highBloodPressure,copd,obesity)`
+    migraine,
+    pain,
+    ibs,
+    sars,
+    diabetes2,
+    renal,
+    alz,
+    arthritis,
+    anxiety
+    await conn.end();
+    return "Success"; */
 }

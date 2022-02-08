@@ -2,7 +2,7 @@
 import path from 'path'
 import express from 'express';
 import bodyParser from 'body-parser';
-import { createPatient, getPatient, updatePatient } from './db.js';
+import { getPatient, updatePatient, deleteSchema, createSchema, createCondition } from './db.js';
 import { login, signUp } from './signUp.js';
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,17 +28,19 @@ app.get('*', (req, res) => {
 app.post("/manage-profile", (req, res) => {
   console.log("Submitting to manage profile...");
   console.log(req.body);
-  console.log(req.body.email);
+ // console.log(req.body.email);
 
   // Edits the current patient based on the patient's username; it is accessed by the 'email' field
   updatePatient(req.body).then(function() {
-    getPatient(req.body.email).then(function(ans) {
-      delete ans.password;
-      delete ans.salt;
-      console.log(ans);
-      res.send(ans);
-    })
-  });
+      getPatient(req.body.email).then(function(ans) {
+        delete ans.password;
+        delete ans.salt;
+        console.log(ans);
+        res.send(ans);
+      })
+  }).catch(function(err) {
+    console.log(err);
+  }); 
 
 
 
@@ -78,7 +80,10 @@ app.post("/signUp", (req, res) => {
   delete signUpInfo.password;
   delete signUpInfo.salt;
   // Send back the signUpInfo
-  res.send(signUpInfo);
+  res.send(signUpInfo);  
+ // deleteSchema();
+  //createSchema();
+  //console.log("Schema created.");
     
 });
 

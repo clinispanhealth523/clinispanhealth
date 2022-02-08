@@ -25,6 +25,7 @@ export async function login(inputs, host) {
         window.localStorage.setItem('phone', res.data.phone);
         window.localStorage.setItem('nickname', res.data.nickname);
         window.localStorage.setItem('display_email', res.data.display_email);
+        window.localStorage.setItem('ethnicity', res.data.ethnicity);
 
           // Set the local storage to signify that the user is loggedIn
           window.localStorage.setItem('loggedIn', true);

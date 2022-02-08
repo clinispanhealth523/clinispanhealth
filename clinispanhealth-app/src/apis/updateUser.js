@@ -5,7 +5,7 @@ import axios from 'axios';
 // Takes as INPUT: data field values in the 'Manage Profile' page
 // Outputs: A success code or message if the data has successfully been updated in the DB
 
-export async function updateUser(user, host) {
+export async function updateUser(user, conditions, host) {
     await axios({
         method: 'POST',
         url: `${host}/manage-profile`,
@@ -19,7 +19,8 @@ export async function updateUser(user, host) {
             nickname: user.displayName,
             display_email: user.displayEmail,
             phone: user.phone,
-            gender: user.gender
+            gender: user.gender,
+            ethnicity: user.ethnicity
         }
 
     }).then(function(res) {
@@ -31,6 +32,36 @@ export async function updateUser(user, host) {
         window.localStorage.setItem('phone', res.data.phone);
         window.localStorage.setItem('nickname', res.data.displayName);
         window.localStorage.setItem('display_email', res.data.displayEmail);
-    })
+        window.localStorage.setItem('ethnicity', res.data.ethnicity);
+    });
+   /* await axios ({
+        method: 'POST',
+        url: `${host}/manage-profile`,
+        data: {
+            breastCancer: 'Breast Cancer',
+            highCholesterol: 'High Cholesterol',
+            atheroclerosis: 'atheroclerosis',
+            sleepApnea: 'Sleep Apnea',
+            asthma: 'Asthma',
+            diabetes: 'Diabetes',
+            depression: 'Depression',
+            constipation: 'Constipation',
+            prostate: 'Prostate',
+            highBloodPressure: 'High Blood Pressure',
+            copd: 'COPD',
+            obesity: 'Obesity',
+            add: 'ADD',
+            migraine: 'Migraine',
+            pain: 'Pain',
+            ibs: 'IBS',
+            sars: 'SARS',
+            diabetes2: 'Diabetes 2',
+            renal: 'Renal',
+            alz: 'Alzheimers',
+            arthritis: 'Arthritis',
+            anxiety: 'Anxiety'
+        }
+    }) */
+
 
 }

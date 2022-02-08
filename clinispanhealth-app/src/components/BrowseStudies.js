@@ -2,19 +2,23 @@ import Banner from './Banner'
 import TrialBox from './TrialBox'
 import React, { Component } from 'react'
 import axios from 'axios'
+import { faCalendarTimes } from '@fortawesome/free-solid-svg-icons'
 
 class BrowseStudies extends Component  {
         constructor(props) {
         super(props)
 
         this.state = {
-            posts: []
+            posts: [],
+            keyword: ''
         }
     }
+
 
     componentDidMount() {
         var min = Math.trunc(Math.random()*10)+1
         var max = min+10
+        // 
         /*TO DO:
 
         OPTIONS TO SORT BY:
@@ -27,9 +31,9 @@ class BrowseStudies extends Component  {
 
         -- users can choose how many studies to show per page. 10, 50, 100, etc. This will be updated by changing the max_rank=''
         */
-        axios.get('https://clinicaltrials.gov/api/query/study_fields?fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=' + 
-        min + '&max_rnk=' + max + '&fmt=json')
-        .then(response => {
+        axios.get('https://clinicaltrials.gov/api/query/study_fields?&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=10&max_rnk=20&fmt=json')
+
+        .then(res => {
             /* 
             
             
@@ -44,14 +48,40 @@ class BrowseStudies extends Component  {
 
 
             */
-            this.setState({posts: response.data['StudyFieldsResponse']['StudyFields']})
+            this.setState({
+                posts: res.data ? res.data['StudyFieldsResponse']['StudyFields'] : [],
+                keyword: this.state.keyword
+            })
+
         })
         .catch(error => {
             console.log(error)
         })
+
+        
     }
+
+
+
+    // Automatically refreshes depending on what the patient enters in the search box
+    handleSearch = (event) => {
+        this.setState({
+            posts: this.state.posts,
+            keyword: event.target.value
+        })
+        var min = Math.trunc(Math.random()*10)+1
+        var max = min+10
+        axios.get(`https://clinicaltrials.gov/api/query/study_fields?expr=` + this.state.keyword + `&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=` + 
+        min + `&max_rnk=` + max + `&fmt=json`).then(res => {
+            this.setState({
+                posts: res.data ? res.data['StudyFieldsResponse']['StudyFields'] : [],
+                keyword: this.state.keyword
+            })
+        })
+
+    }
+    
     render () {
-        const {posts} = this.state
      return   <div>
             <Banner color='browse-studies'/>
                 <div className='main'>
@@ -60,7 +90,10 @@ class BrowseStudies extends Component  {
                     <div className='searchLabel'>
                         <p className='label'>Search:</p>
                     </div>
-                    <input className='search' placeholder='Enter a specific search term...'></input>
+                    <input className='search' value={this.state.keyword}
+                    name='keyword'
+                    onChange={this.handleSearch}
+                    placeholder='Enter a specific search term...'></input>
                 </div>
                 <div className='searchBox'>
                     <div className='searchLabel'>
@@ -79,12 +112,13 @@ class BrowseStudies extends Component  {
             
                 <div className='trialContainer'>
                     {
-                    posts.length ?
-                    posts.map(post => <TrialBox key={post.rank} title={post['BriefTitle']} 
+                    
+                    this.state.posts ?
+                    this.state.posts.map(post => <TrialBox key={post.rank} title={post['BriefTitle']} 
                     location={post['LocationCity']} />) :
-                    null
+                    null  
                     }
-                </div>
+                </div> 
             </div>
         </div>
     }

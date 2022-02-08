@@ -15,7 +15,8 @@ export const SCHEMA = {
                 'nickname VARCHAR(255),' +
                 'display_email VARCHAR(255),' +
                 'phone VARCHAR(12), ' +
-                'referral_code VARCHAR(60))',  
+                'referral_code VARCHAR(60),' +
+                'ethnicity VARCHAR(255))',
     Admin: 'CREATE TABLE IF NOT EXISTS Admin (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'email VARCHAR(255) UNIQUE NOT NULL,' +
@@ -25,16 +26,16 @@ export const SCHEMA = {
                 'id int PRIMARY KEY NOT NULL,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
     StudyCondition: 'CREATE TABLE IF NOT EXISTS StudyCondition (' +
-                'id int PRIMARY KEY NOT NULL,' +
+                'id int PRIMARY KEY NOT NULL AUTO_INCREMENT,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
     Characteristic: 'CREATE TABLE IF NOT EXISTS Characteristic (' +
                 'id int PRIMARY KEY NOT NULL,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
     Ethnicity: 'CREATE TABLE IF NOT EXISTS Ethnicity (' +
-                'id int PRIMARY KEY NOT NULL,' +
+                'id int PRIMARY KEY NOT NULL AUTO_INCREMENT,' +
                 'name VARCHAR(255) UNIQUE NOT NULL)',
     Location: 'CREATE TABLE IF NOT EXISTS Location (' +
-                'zipcode int PRIMARY KEY NOT NULL,' +
+                'zipcode int PRIMARY KEY NOT NULL AUTO_INCREMENT,' +
                 'city VARCHAR(255),' +
                 'state CHAR(2))',
 
