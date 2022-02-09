@@ -6,6 +6,9 @@ import axios from 'axios';
 // Outputs: A success code or message if the data has successfully been updated in the DB
 
 export async function updateUser(user, conditions, host) {
+    // Logic to handle when a DATE is entered
+    var dates = user.dob.split('-');
+    const date = dates[2].concat('-').concat(dates[0]).concat('-').concat(dates[1]);
     await axios({
         method: 'POST',
         url: `${host}/manage-profile`,
@@ -14,7 +17,7 @@ export async function updateUser(user, conditions, host) {
             email: window.localStorage.getItem('email'),
             first: user.first,
             last: user.last,
-            dob: user.dob,
+            dob: date,
             zipcode: user.location,
             nickname: user.displayName,
             display_email: user.displayEmail,
@@ -28,10 +31,10 @@ export async function updateUser(user, conditions, host) {
         window.localStorage.setItem('last', res.data.last);
         window.localStorage.setItem('zipcode', res.data.zipcode);
         window.localStorage.setItem('gender', res.data.gender);
-        window.localStorage.setItem('dob', res.data.dob);
+        window.localStorage.setItem('dob', user.dob);
         window.localStorage.setItem('phone', res.data.phone);
-        window.localStorage.setItem('nickname', res.data.displayName);
-        window.localStorage.setItem('display_email', res.data.displayEmail);
+        window.localStorage.setItem('nickname', res.data.nickname);
+        window.localStorage.setItem('display_email', res.data.display_email);
         window.localStorage.setItem('ethnicity', res.data.ethnicity);
     });
    /* await axios ({

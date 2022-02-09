@@ -147,9 +147,9 @@ export async function updatePatient(user) {
     first = '${user.first}',
     last = '${user.last}',
     dob = '${user.dob}',
-    zipcode = '${user.location}',
-    nickname = '${user.displayName}',
-    display_email = '${user.displayEmail}',
+    zipcode = '${user.zipcode}',
+    nickname = '${user.nickname}',
+    display_email = '${user.display_email}',
     phone = '${user.phone}',
     gender = '${user.gender}',
     ethnicity = '${user.ethnicity}'

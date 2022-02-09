@@ -22,13 +22,13 @@ const ProfileTile = () => {
    const [user, setUser] = useState({
         first: loggedIn ? window.localStorage.getItem('first') : "",
         last: loggedIn ? window.localStorage.getItem('last') : "",
-        dob: loggedIn ?  window.localStorage.getItem('dob') : "",
+        dob: loggedIn ?  window.localStorage.getItem('dob') : "MM-DD-YYYY",
         location: loggedIn ? window.localStorage.getItem('zipcode') : "",
         displayName: loggedIn ? window.localStorage.getItem('nickname') : "",
         displayEmail: loggedIn ? window.localStorage.getItem('display_email') : "",
         phone: loggedIn ? window.localStorage.getItem('phone') : "",
         gender: loggedIn ? window.localStorage.getItem('gender') : "",
-        ethnicity: "",
+        ethnicity: loggedIn ? window.localStorage.getItem('ethnicity') : "",
         meds: "",
         check: "" 
    })

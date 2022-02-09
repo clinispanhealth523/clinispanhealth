@@ -28,7 +28,6 @@ app.get('*', (req, res) => {
 app.post("/manage-profile", (req, res) => {
   console.log("Submitting to manage profile...");
   console.log(req.body);
- // console.log(req.body.email);
 
   // Edits the current patient based on the patient's username; it is accessed by the 'email' field
   updatePatient(req.body).then(function() {
@@ -36,6 +35,7 @@ app.post("/manage-profile", (req, res) => {
         delete ans.password;
         delete ans.salt;
         console.log(ans);
+
         res.send(ans);
       })
   }).catch(function(err) {
@@ -80,6 +80,7 @@ app.post("/signUp", (req, res) => {
   delete signUpInfo.password;
   delete signUpInfo.salt;
   // Send back the signUpInfo
+  console.log(signUpInfo);
   res.send(signUpInfo);  
  // deleteSchema();
   //createSchema();

@@ -8,6 +8,8 @@ import StudiesForYou from './components/StudiesForYou.js';
 import BrowseStudies from './components/BrowseStudies.js'
 import ManageProfile from './components/ManageProfile.js'
 import FAQ from './components/FAQ.js'
+import StudyPage from './components/StudyPage.js';
+
 
 import './index.css'
 import './signUp.css'
@@ -15,6 +17,7 @@ import './HomePage.css'
 import './browseStudies.css'
 import './ManageProfile.css'
 import './faq.css'
+import './StudyPage.css'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,6 +31,7 @@ ReactDOM.render(
         <Route path="/browse-studies" component={BrowseStudies}/>
         <Route path="/manage-profile" component={ManageProfile}/>
         <Route path="/faq" component={FAQ}/>
+        <Route path="/study-page" component={StudyPage}/>
         <Route path="/test" component = {Test}></Route>
       </Switch>
     </Router>
