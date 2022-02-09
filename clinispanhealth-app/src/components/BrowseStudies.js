@@ -69,8 +69,9 @@ class BrowseStudies extends Component  {
             posts: this.state.posts,
             keyword: event.target.value
         })
-        var min = Math.trunc(Math.random()*10)+1
-        var max = min+10
+        // Set to show the first 50 studies when a search term is entered. Can add functionality by adding a min and max setting to the "sort" button 
+        var min = 1
+        var max = 50
         axios.get(`https://clinicaltrials.gov/api/query/study_fields?expr=` + this.state.keyword + `&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=` + 
         min + `&max_rnk=` + max + `&fmt=json`).then(res => {
             this.setState({
