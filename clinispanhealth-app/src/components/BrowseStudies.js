@@ -31,7 +31,7 @@ class BrowseStudies extends Component  {
 
         -- users can choose how many studies to show per page. 10, 50, 100, etc. This will be updated by changing the max_rank=''
         */
-        axios.get('https://clinicaltrials.gov/api/query/study_fields?&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=10&max_rnk=20&fmt=json')
+        axios.get('https://clinicaltrials.gov/api/query/study_fields?&fields=BriefTitle%2C+LocationCity%2C+LocationState%2C+BaselineGroupDescription%2C+BriefSummary%2C+Gender%2C+MinimumAge%2C+MaximumAge%2C+StartDate&min_rnk=10&max_rnk=20&fmt=json')
 
         .then(res => {
             /* 
@@ -72,7 +72,7 @@ class BrowseStudies extends Component  {
         // Set to show the first 50 studies when a search term is entered. Can add functionality by adding a min and max setting to the "sort" button 
         var min = 1
         var max = 50
-        axios.get(`https://clinicaltrials.gov/api/query/study_fields?expr=` + this.state.keyword + `&fields=BriefTitle%2CLocationCity%2CLocationState&min_rnk=` + 
+        axios.get(`https://clinicaltrials.gov/api/query/study_fields?expr=` + this.state.keyword + `&fields=BriefTitle%2C+LocationCity%2C+LocationState%2C+BaselineGroupDescription%2C+CompletionDate%2C+StudyPopulation%2C+BriefSummary%2C+Gender%2C+MinimumAge%2C+MaximumAge%2C+StartDate&min_rnk=` + 
         min + `&max_rnk=` + max + `&fmt=json`).then(res => {
             this.setState({
                 posts: res.data ? res.data['StudyFieldsResponse']['StudyFields'] : [],
@@ -116,7 +116,10 @@ class BrowseStudies extends Component  {
                     
                     this.state.posts ?
                     this.state.posts.map(post => <TrialBox key={post.rank} title={post['BriefTitle']} 
-                    location={post['LocationCity']} />) :
+                    location={post['LocationCity']} state={post['LocaionState']}
+                    summary={post['BriefSummary']} gender={post['Gender']} minAge={post['MinimumAge']}
+                    maxAge={post['MaximumAge']} startDate={post['StartDate']}
+                    endDate={post['CompletionDate']} population={post['population']}/>) :
                     null  
                     }
                 </div> 

@@ -9,6 +9,7 @@ import BrowseStudies from './components/BrowseStudies.js'
 import ManageProfile from './components/ManageProfile.js'
 import FAQ from './components/FAQ.js'
 import StudyPage from './components/StudyPage.js';
+import StudySignUp from './components/StudySignUp.js'
 
 
 import './index.css'
@@ -32,6 +33,7 @@ ReactDOM.render(
         <Route path="/manage-profile" component={ManageProfile}/>
         <Route path="/faq" component={FAQ}/>
         <Route path="/study-page" component={StudyPage}/>
+        <Route path="/study-sign-up" component={StudySignUp}/>
         <Route path="/test" component = {Test}></Route>
       </Switch>
     </Router>

@@ -1,12 +1,21 @@
 import studyImg from '../images/study-logo.png'
 import { Link } from 'react-router-dom'
 
-const TrialBox = ({title, location}) => {
+const TrialBox = ({title, location, state, summary,
+gender, minAge, maxAge, startDate, endDate, population}) => {
     const newTo = {
         pathname: "/study-page",
-        props: {
-            title: {title},
-            location: {location}
+        state: {
+            title: title,
+            location: location,
+            state: state,
+            summary: summary,
+            gender: gender,
+            minAge: minAge,
+            maxAge: maxAge,
+            startDate: startDate,
+            endDate: endDate,
+            population: population
         }
     }
     return (

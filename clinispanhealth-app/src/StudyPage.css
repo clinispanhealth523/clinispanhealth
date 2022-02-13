@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap');
+
 .studyPageContainer {
     width: 100%;
-    height: 1100px;
+    height: 100%;
     background-color: #f2f2f3;
     display: flex;
     flex-direction: column;
@@ -9,8 +11,15 @@
 
 }
 
+.contact {
+    width: 15%;
+    margin-left: 10px;
+}
+
 .back {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 15%;
+    margin-left: 40px;
 
 }
 
@@ -18,21 +27,95 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 15%;
     width: 100%;
+}
+
+.studyTitle {
+    font-size: 2em;
+    font-family: 'PT Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 70%
 }
 
 .mainContainer {
     background-color: #059ec5;
-    height: 1000px;
-    width: 90%;
+    height: 85%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main {
-    background-color:#f2f2f3;
-    height: 980px;
+.main2 {
+    background-color:white;
+    height: 90%;
     width: 98%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-color: black;
+    border-style: solid;
 
+}
+
+.col, .col2 {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+.col2 {
+    align-items: center;
+}
+
+.studyInfo {
+    font-weight: 50;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.video {
+    height: 150px;
+    width: 300px;
+    margin-bottom: 100px;
+    border-style: solid;
+    border-color: black;
+
+}
+
+.studyBtnDiv { 
+    height: 150px;
+    width: 45%;
+}
+
+.location {
+    display: flex;
+    height: 100px;
+}
+
+.summary {
+    display: flex;
+    height: 40%;
+
+}
+
+.timeline {
+    display: flex;
+    height: 100px;
+}
+
+.elig {
+    display: flex;
+    height: 200px;
 }
